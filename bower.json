@@ -22,7 +22,8 @@
     "angular": "~1.4.1",
     "firebase": "~2.2.7",
     "angularfire": "~1.1.2",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "angular-material": "~0.10.0"
   },
   "devDependencies": {
     "mocha": "~2.2.5",
