@@ -10,16 +10,16 @@
 
   <main ng-controller="myApp">
 
-    <iframe src="{{embedUrl}}" width="90%" height="400px"></iframe>
+    <iframe src="{{sync.embedUrl}}" width="90%" height="400px"></iframe>
 
-    <form ng-submit="embedify(input.url)">
-      <input type="text" ng-model="input.url" placeholder="Url">
+    <form ng-submit="embedify(sync.input.url)">
+      <input type="text" ng-model="sync.input.url" placeholder="Url">
       <p>Paste YouTube link and hit enter!</p>
     </form>
 
 
-    <input type="text" ng-model="input.message" placeholder="Message">
-    <h2>{{input.message}}</h2>
+    <input type="text" ng-model="sync.input.message" placeholder="Message">
+    <h2>{{sync.input.message}}</h2>
 
   </main>
 

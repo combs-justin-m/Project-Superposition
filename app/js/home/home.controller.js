@@ -14,21 +14,23 @@
         // synchronize the object with a three-way data binding
         // click on `index.html` above to see it used in the DOM!
 
-        syncObject.$bindTo($scope, "input");
+        $scope.sync = $scope.sync || {};
 
-        $scope.embedify = function(link) {
+        syncObject.$bindTo($scope, "sync").then(function () {
 
-          var youtubeLinkPattern = /^http(s?):\/\/www\.youtu(\.be|be\.com)\/watch\?v=([-_a-zA-z0-9]+)$/;
+          $scope.embedify = function(link) {
 
-          var match = youtubeLinkPattern.exec(link);
-          if (match) {
-            $scope.embedUrl = "https://www.youtube.com/embed/" + match[3] + "?autoplay=1";
-          } else {
-            $scope.embedUrl = "";
+            var youtubeLinkPattern = /^http(s?):\/\/www\.youtu(\.be|be\.com)\/watch\?v=([-_a-zA-z0-9]+)$/;
+
+            var match = youtubeLinkPattern.exec(link);
+            if (match) {
+              $scope.sync.embedUrl = "https://www.youtube.com/embed/" + match[3] + "?autoplay=1";
+            } else {
+              $scope.sync.embedUrl = "";
+            }
           }
-        }
 
-
+        });
 
       }]);
 
