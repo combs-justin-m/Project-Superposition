@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project Name</title>
+  <title>Project Superposition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/vendor/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-app="app">
 
-  <main ng-controller="myApp">
-
-    <iframe src="{{sync.embedUrl}}" width="90%" height="400px"></iframe>
-
-    <form ng-submit="embedify(sync.input.url)">
-      <input type="text" ng-model="sync.input.url" placeholder="Url">
-      <p>Paste YouTube link and hit enter!</p>
-    </form>
-
-
-    <input type="text" ng-model="sync.input.message" placeholder="Message">
-    <h2>{{sync.input.message}}</h2>
-
-  </main>
+  <header></header>
+  <main ui-view></main>
+  <footer></footer>
 
   <!-- VENDOR -->
   <script src="js/vendor/jquery.js"></script>
@@ -29,12 +18,14 @@
   <script src="js/vendor/angular.js"></script>
   <script src="js/vendor/firebase.js"></script>
   <script src="js/vendor/angularfire.js"></script>
+  <script src="js/vendor/angular-ui-router.js"></script>
 
   <!-- MAIN -->
   <script src="js/main.js"></script>
 
   <!-- ANGULAR -->
   <script src="js/home/home.controller.js"></script>
+  <script src="js/login/login.controller.js"></script>
 
 
 </body>

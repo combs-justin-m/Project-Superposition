@@ -1,0 +1,14 @@
+
+<iframe src="{{sync.embedUrl}}" width="500px" height="400px"></iframe>
+<iframe src="{{sync.input.generalUrl}}" width="500px" height="400px"></iframe>
+
+<form ng-submit="embedify(sync.input.url)">
+  <input type="text" ng-model="sync.input.url" placeholder="YOUTUBE">
+  <p>Paste YouTube link and hit enter!</p>
+</form>
+
+<input type="text" ng-model="sync.input.generalUrl" placeholder="General URL">
+
+
+<input type="text" ng-model="sync.input.message" placeholder="Message">
+<h2>{{sync.input.message}}</h2>

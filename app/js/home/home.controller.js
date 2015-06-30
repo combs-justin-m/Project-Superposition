@@ -4,7 +4,7 @@
 
   angular.module('app')
 
-    .controller('myApp', [ '$scope', '$firebaseObject',
+    .controller('appController', [ '$scope', '$firebaseObject',
       function($scope, $firebaseObject){
 
         var ref = new Firebase('radiant-heat-3085.firebaseIO.com');
@@ -16,7 +16,7 @@
 
         $scope.sync = $scope.sync || {};
 
-        syncObject.$bindTo($scope, "sync").then(function () {
+        syncObject.$bindTo($scope, 'sync').then(function () {
 
           $scope.embedify = function(link) {
 
@@ -24,11 +24,11 @@
 
             var match = youtubeLinkPattern.exec(link);
             if (match) {
-              $scope.sync.embedUrl = "https://www.youtube.com/embed/" + match[3] + "?autoplay=1";
+              $scope.sync.embedUrl = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
             } else {
-              $scope.sync.embedUrl = "";
+              $scope.sync.embedUrl = '';
             }
-          }
+          };
 
         });
 
