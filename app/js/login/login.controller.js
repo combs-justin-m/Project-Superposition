@@ -4,8 +4,8 @@
 
   angular.module('app')
 
-    .controller('loginController', [ '$scope', '$firebaseObject',
-      function($scope, $firebaseObject){
+    .controller('loginController', [
+      function(){
 
 
 

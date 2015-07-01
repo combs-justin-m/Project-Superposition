@@ -4,6 +4,7 @@
   "globals": {
     "angular": false,
     "Firebase": false,
-    "_" : false
+    "_" : false,
+    "console": false
   }
 }

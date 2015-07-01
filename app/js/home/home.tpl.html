@@ -1,14 +1,32 @@
 
-<iframe src="{{sync.embedUrl}}" width="500px" height="400px"></iframe>
-<iframe src="{{sync.input.generalUrl}}" width="500px" height="400px"></iframe>
 
-<form ng-submit="embedify(sync.input.url)">
-  <input type="text" ng-model="sync.input.url" placeholder="YOUTUBE">
-  <p>Paste YouTube link and hit enter!</p>
-</form>
+<!-- LOGOUT BUTTON -->
+<div class="user" ng-show="authData">
+  <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
+  <p>{{authData.github.displayName}}</p>
+  <md-button class="md-raised" ng-click="logout()">Logout</md-button>
+</div>
 
-<input type="text" ng-model="sync.input.generalUrl" placeholder="General URL">
+<!-- LOGIN BUTTON -->
+<div class="login" ng-hide="authData">
+  <img ng-src="https://www.clever-cloud.com/assets/img/github-icon.svg">
+  <md-button class="md-raised" ng-click="login()">Log in With GitHub</md-button>
+</div>
 
+<!-- FRAMES -->
+<div class="container" ng-show="authData">
 
-<input type="text" ng-model="sync.input.message" placeholder="Message">
-<h2>{{sync.input.message}}</h2>
+  <h2>{{sync.input.message}}</h2>
+
+  <iframe src="{{sync.embedUrl}}" width="500px" height="400px"></iframe>
+  <iframe src="{{sync.input.generalUrl}}" width="500px" height="400px"></iframe>
+
+  <form ng-submit="embedify(sync.input.url)">
+    <input type="text" ng-model="sync.input.url" placeholder="YOUTUBE">
+    <p>Paste YouTube link and hit enter!</p>
+  </form>
+
+  <input type="text" ng-model="sync.input.generalUrl" placeholder="General URL">
+
+  <input type="text" ng-model="sync.input.message" placeholder="Message">
+</div>

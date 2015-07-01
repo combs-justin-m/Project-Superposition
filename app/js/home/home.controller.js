@@ -4,15 +4,12 @@
 
   angular.module('app')
 
-    .controller('appController', [ '$scope', '$firebaseObject',
-      function($scope, $firebaseObject){
+    .controller('appController', [ '$scope', '$firebaseObject', '$http', 'Auth',
+      function($scope, $firebaseObject, $http, Auth){
 
         var ref = new Firebase('radiant-heat-3085.firebaseIO.com');
 
         var syncObject = $firebaseObject(ref);
-
-        // synchronize the object with a three-way data binding
-        // click on `index.html` above to see it used in the DOM!
 
         $scope.sync = $scope.sync || {};
 
@@ -31,6 +28,26 @@
           };
 
         });
+
+        Auth.$onAuth(function(authData){
+          $scope.authData = authData;
+          console.log(authData);
+        });
+
+        $scope.login = function() {
+
+
+          Auth.$authWithOAuthPopup('github')
+            .catch(function(error){
+              console.error(error);
+          });
+
+        };
+
+        $scope.logout = function() {
+          Auth.$unauth();
+        };
+
 
       }]);
 

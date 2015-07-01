@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('app', ['firebase', 'ui.router'])
+  angular.module('app', ['firebase', 'ui.router', 'ngMaterial'])
 
     .config(['$sceProvider', '$stateProvider',
       function($sceProvider, $stateProvider) {
