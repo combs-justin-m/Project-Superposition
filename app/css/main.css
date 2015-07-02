@@ -10,17 +10,21 @@
     padding-bottom: 15px; }
 
 .user {
-  width: 200px;
-  margin: 30px auto;
+  position: absolute;
+  right: 15px;
+  width: 100px;
   padding-top: 30px;
   text-align: center;
   border: 1px solid lightgrey;
   padding: 15px; }
 
 .profilePic {
-  height: 150px;
-  width: 150px; }
+  height: 80px;
+  width: 80px; }
+
+.userName {
+  margin-bottom: 0; }
 
 .container {
   text-align: center;
-  margin: 60px auto; }
+  margin: 0 auto; }

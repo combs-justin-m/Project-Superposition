@@ -3,8 +3,8 @@
 <!-- LOGOUT BUTTON -->
 <div class="user" ng-show="authData">
   <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
-  <p>{{authData.github.displayName}}</p>
-  <md-button class="md-raised" ng-click="logout()">Logout</md-button>
+  <md-button class="md-raised logoutBtn" ng-click="logout()">Logout</md-button>
+  <p class="userName">{{authData.github.displayName}}</p>
 </div>
 
 <!-- LOGIN BUTTON -->
