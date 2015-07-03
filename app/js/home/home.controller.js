@@ -21,13 +21,30 @@
 
             var match = youtubeLinkPattern.exec(link);
             if (match) {
-              $scope.sync.embedUrl = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
+              $scope.sync.embedYT = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
             } else {
-              $scope.sync.embedUrl = '';
+              $scope.sync.embedYT = '';
             }
           };
 
+          $scope.spotify = function(link) {
+
+            $scope.sync.embedSpot = 'https://embed.spotify.com/?uri=' + link;
+          };
+
+          $scope.soundcloud = function(link) {
+
+            SC.oEmbed($scope.sync.input.cloud,
+
+            {auto_play: true},  document.getElementById("SoundCloud"));
+
+            $scope.sync.embedCloud = link;
+            console.log($scope.sync.embedCloud);
+          };
+
         });
+
+        // Login OAuth
 
         Auth.$onAuth(function(authData){
           $scope.authData = authData;
