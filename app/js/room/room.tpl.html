@@ -1,0 +1,47 @@
+<!-- NAN BTNS -->
+<md-button class="md-fab md-primary linkBtn" ng-click="linkFrame = !linkFrame" ng-show="authData">
+  <i class="fa fa-link fa-2x"></i>
+</md-button>
+
+<md-button class="md-fab md-primary youtubeBtn" ng-click="youtubeFrame = !youtubeFrame" ng-show="authData">
+  <i class="fa fa-youtube-play fa-2x"></i>
+</md-button>
+
+<md-button class="md-fab md-primary spotifyBtn" ng-click="spotifyFrame = !spotifyFrame" ng-show="authData">
+  <i class="fa fa-spotify fa-2x"></i>
+</md-button>
+
+<md-button class="md-fab md-primary soundcloudBtn" ng-click="soundcloudFrame = !soundcloudFrame" ng-show="authData">
+  <i class="fa fa-soundcloud fa-2x"></i>
+</md-button>
+
+<!-- FRAMES -->
+<div class="container" ng-show="authData">
+
+  <!-- <h2>{{sync.input.message}}</h2> -->
+  <!-- <input type="text" ng-model="sync.input.message" placeholder="Message"> -->
+
+
+<div class="frame linkFrame" ng-show="linkFrame">
+  <iframe src="{{sync.input.generalUrl}}" width="500px" height="400px"></iframe>
+  <input type="text" ng-model="sync.input.generalUrl" placeholder="General URL">
+</div>
+
+<div class="frame youtubeFrame" ng-show="youtubeFrame">
+  <iframe src="{{sync.embedYT}}" width="500px" height="400px"></iframe>
+  <form ng-submit="embedify(sync.input.yt)">
+    <input type="text" ng-model="sync.input.yt" placeholder="YOUTUBE">
+  </form>
+</div>
+
+<div class="frame spotifyFrame" ng-show="spotifyFrame">
+  <iframe src="{{sync.embedSpot}}" width="500" height="400" allowtransparency="true"></iframe>
+  <form ng-submit="spotify(sync.input.spot)">
+    <input type="text" ng-model="sync.input.spot" placeholder="Spotify URI Link">
+  </form>
+</div>
+
+<div class="frame soundcloudFrame" id="SoundCloud" ng-show="soundcloudFrame"></div>
+  <form ng-submit="soundcloud(sync.input.cloud)">
+    <input type="text" ng-model="sync.input.cloud" placeholder="SoundCloud Link">
+  </form>
