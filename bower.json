@@ -23,7 +23,8 @@
     "firebase": "~2.2.7",
     "angularfire": "~1.1.2",
     "angular-ui-router": "~0.2.15",
-    "angular-material": "~0.10.0"
+    "angular-material": "~0.10.0",
+    "font-awesome": "~4.3.0"
   },
   "devDependencies": {
     "mocha": "~2.2.5",

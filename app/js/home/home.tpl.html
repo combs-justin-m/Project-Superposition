@@ -1,4 +1,7 @@
 
+<md-button class="md-fab md-primary" ng-click="youtube = true">
+  <i class="fa fa-youtube-square fa-2x"></i>
+</md-button>
 
 <!-- LOGOUT BUTTON -->
 <div class="user" ng-show="authData">
@@ -19,7 +22,7 @@
   <!-- <h2>{{sync.input.message}}</h2> -->
   <!-- <input type="text" ng-model="sync.input.message" placeholder="Message"> -->
 
-<div class="frame">
+<div class="frame" ng-show="youtube">
   <iframe src="{{sync.embedYT}}" width="500px" height="400px"></iframe>
   <form ng-submit="embedify(sync.input.yt)">
     <input type="text" ng-model="sync.input.yt" placeholder="YOUTUBE">
