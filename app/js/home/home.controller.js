@@ -49,7 +49,6 @@
 
         Auth.$onAuth(function(x){
           $scope.authData = x;
-          // console.log($scope.authData.github);
         });
 
         $scope.login = function() {
@@ -71,9 +70,14 @@
           var data = Auth.$getAuth();
           $scope.room = Room(data.github.username);
 
+          var userRoom = $scope.room.$id
+          $stateParams.roomId = userRoom;
+
+          console.log($scope.room);
+
           $scope.room.$save().then(function() {
 
-
+            $state.go('room');
 
           }).catch(function(error){
             console.log(error);

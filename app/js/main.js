@@ -14,7 +14,7 @@
             controller: 'appController'
           })
           .state('room', {
-            url: '/:roomId',
+            url: '/room/:roomId',
             templateUrl: 'js/room/room.tpl.html',
             controller: 'roomController'
           });
