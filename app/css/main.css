@@ -31,7 +31,8 @@
 
 .frame {
   text-align: center;
-  width: 100%;
+  width: 500px;
+  height: 435px;
   margin: 30px auto; }
   .frame input {
     display: block;
@@ -41,3 +42,24 @@
   width: 500px;
   height: 400px;
   margin: 30px auto; }
+
+.fa {
+  margin-top: 13px; }
+
+.youtubeBtn {
+  background-color: #CC181E !important; }
+
+.youtubeFrame {
+  background-color: #CC181E; }
+
+.spotifyBtn {
+  background-color: #2EBD59 !important; }
+
+.spotifyFrame {
+  background-color: #2EBD59; }
+
+.soundcloudBtn {
+  background-color: #FF5500 !important; }
+
+.soundcloudFrame {
+  background-color: #FF5500; }

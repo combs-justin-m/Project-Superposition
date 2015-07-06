@@ -1,3 +1,7 @@
+$youtube: #CC181E;
+$spotify: #2EBD59;
+$soundcloud: #FF5500;
+
 .login {
   margin: 30px auto;
   padding: 15px;
@@ -38,7 +42,8 @@
 
 .frame {
   text-align: center;
-  width: 100%;
+  width: 500px;
+  height: 435px;
   margin: 30px auto;
 
   input {
@@ -51,4 +56,32 @@
   width: 500px;
   height: 400px;
   margin: 30px auto;
+}
+
+.fa {
+  margin-top: 13px;
+}
+
+.youtubeBtn {
+  background-color: $youtube !important;
+}
+
+.youtubeFrame {
+  background-color: $youtube;
+}
+
+.spotifyBtn {
+  background-color: $spotify !important;
+}
+
+.spotifyFrame {
+  background-color: $spotify;
+}
+
+.soundcloudBtn {
+  background-color: $soundcloud !important;
+}
+
+.soundcloudFrame {
+  background-color: $soundcloud;
 }
