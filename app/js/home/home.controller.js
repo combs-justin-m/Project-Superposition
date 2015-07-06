@@ -4,8 +4,8 @@
 
   angular.module('app')
 
-    .controller('appController', [ '$scope', '$firebaseObject', 'Auth', 'Room', '$stateParams', '$state',
-      function($scope, $firebaseObject, Auth, Room, $stateParams, $state){
+    .controller('appController', [ '$scope', '$firebaseObject', 'Auth', 'Room', '$state',
+      function($scope, $firebaseObject, Auth, Room, $state){
 
 
         // Login OAuth
@@ -34,10 +34,12 @@
           var data = Auth.$getAuth();
           $scope.room = Room(data.github.username);
 
-          var userRoom = $scope.room.$id;
-          $stateParams.roomId = userRoom;
+          console.log($scope.room.$id)
 
-          $state.go('room')
+          // var userRoom = $scope.room.$id;
+          // $stateParams.roomId = userRoom;
+
+          // $state.go('room')
 
           // $scope.room.$save().then(function() {
 
