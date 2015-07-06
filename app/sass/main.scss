@@ -19,6 +19,7 @@ $soundcloud: #FF5500;
 .user {
   position: absolute;
   right: 15px;
+  top: 15px;
   width: 100px;
   padding-top: 30px;
   text-align: center;
@@ -33,6 +34,12 @@ $soundcloud: #FF5500;
 
 .userName {
   margin-bottom: 0;
+}
+
+.room {
+  width: 100%;
+  text-align: center;
+  padding-top: 20%;
 }
 
 .container {

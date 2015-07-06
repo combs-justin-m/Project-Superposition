@@ -4,7 +4,7 @@
 
    angular.module('app')
 
-    .factory("Auth", ['$firebaseObject',
+    .factory("Room", ['$firebaseObject',
       function($firebaseObject) {
 
         return function(username) {
@@ -15,7 +15,7 @@
 
           // return it as a synchronized object
           return $firebaseObject(roomRef);
-      }
+      };
   }]);
 
 }());

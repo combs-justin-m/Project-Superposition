@@ -12,12 +12,12 @@
             url: '',
             templateUrl: 'js/home/home.tpl.html',
             controller: 'appController'
+          })
+          .state('room', {
+            url: '/:roomId',
+            templateUrl: 'js/room/room.tpl.html',
+            controller: 'roomController'
           });
-          // .state('login', {
-          //   url: '/login',
-          //   templateUrl: 'js/login/login.tpl.html',
-          //   controller: 'loginController'
-          // });
 
         // Completely disable SCE.  For demonstration purposes only!
         // Do not use in production.

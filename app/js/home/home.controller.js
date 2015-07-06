@@ -4,51 +4,52 @@
 
   angular.module('app')
 
-    .controller('appController', [ '$scope', '$firebaseObject', '$http', 'Auth',
-      function($scope, $firebaseObject, $http, Auth){
+    .controller('appController', [ '$scope', '$firebaseObject', '$http', 'Auth', 'Room', '$stateParams', '$state',
+      function($scope, $firebaseObject, $http, Auth, Room, $stateParams, $state){
 
-        var ref = new Firebase('radiant-heat-3085.firebaseIO.com');
+        // // ROOM SYNC
 
-        var syncObject = $firebaseObject(ref);
+        // var ref = new Firebase('radiant-heat-3085.firebaseIO.com');
 
-        $scope.sync = $scope.sync || {};
+        // var syncObject = $firebaseObject(ref);
 
-        syncObject.$bindTo($scope, 'sync').then(function () {
+        // $scope.sync = $scope.sync || {};
 
-          $scope.embedify = function(link) {
+        // syncObject.$bindTo($scope, 'sync').then(function () {
 
-            var youtubeLinkPattern = /^http(s?):\/\/www\.youtu(\.be|be\.com)\/watch\?v=([-_a-zA-z0-9]+)$/;
+        //   $scope.embedify = function(link) {
 
-            var match = youtubeLinkPattern.exec(link);
-            if (match) {
-              $scope.sync.embedYT = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
-            } else {
-              $scope.sync.embedYT = '';
-            }
-          };
+        //     var youtubeLinkPattern = /^http(s?):\/\/www\.youtu(\.be|be\.com)\/watch\?v=([-_a-zA-z0-9]+)$/;
 
-          $scope.spotify = function(link) {
+        //     var match = youtubeLinkPattern.exec(link);
+        //     if (match) {
+        //       $scope.sync.embedYT = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
+        //     } else {
+        //       $scope.sync.embedYT = '';
+        //     }
+        //   };
 
-            $scope.sync.embedSpot = 'https://embed.spotify.com/?uri=' + link;
-          };
+        //   $scope.spotify = function(link) {
 
-          $scope.soundcloud = function(link) {
+        //     $scope.sync.embedSpot = 'https://embed.spotify.com/?uri=' + link;
+        //   };
 
-            SC.oEmbed($scope.sync.input.cloud,
+        //   $scope.soundcloud = function(link) {
 
-            {auto_play: true},  document.getElementById("SoundCloud"));
+        //     SC.oEmbed($scope.sync.input.cloud,
 
-            $scope.sync.embedCloud = link;
-            console.log($scope.sync.embedCloud);
-          };
+        //     {auto_play: true},  document.getElementById("SoundCloud"));
 
-        });
+        //     $scope.sync.embedCloud = link;
+        //   };
+
+        // });
 
         // Login OAuth
 
-        Auth.$onAuth(function(authData){
-          $scope.authData = authData;
-          console.log(authData);
+        Auth.$onAuth(function(x){
+          $scope.authData = x;
+          // console.log($scope.authData.github);
         });
 
         $scope.login = function() {
@@ -65,6 +66,19 @@
           Auth.$unauth();
         };
 
+        $scope.createRoom = function() {
+
+          var data = Auth.$getAuth();
+          $scope.room = Room(data.github.username);
+
+          $scope.room.$save().then(function() {
+
+
+
+          }).catch(function(error){
+            console.log(error);
+          });
+        };
 
       }]);
 
