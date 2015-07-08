@@ -9,18 +9,19 @@
 
         Auth.$onAuth(function(x){
           $scope.authData = x;
-          console.log(x);
+          console.log(Room(x.github.username));
         });
 
-        // ROOM SYNC
+        // SYNC ROOM
 
-        var ref = new Firebase('radiant-heat-3085.firebaseIO.com');
 
-        var syncObject = $firebaseObject(ref);
+        // var ref = new Firebase('radiant-heat-3085.firebaseIO.com');
+        //
+        // var syncRoom = $firebaseObject(ref);
+        //
+        // $scope.room = $scope.room || {};
 
-        $scope.sync = $scope.sync || {};
-
-        syncObject.$bindTo($scope, 'sync').then(function () {
+        Room('test').$bindTo($scope, 'room').then(function () {
 
           $scope.embedify = function(link) {
 
@@ -28,25 +29,29 @@
 
             var match = youtubeLinkPattern.exec(link);
             if (match) {
-              $scope.sync.embedYT = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
+              $scope.room.embedYT = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
             } else {
-              $scope.sync.embedYT = '';
+              $scope.room.embedYT = '';
             }
           };
 
           $scope.spotify = function(link) {
 
-            $scope.sync.embedSpot = 'https://embed.spotify.com/?uri=' + link;
+            $scope.room.embedSpot = 'https://embed.spotify.com/?uri=' + link;
           };
 
           $scope.soundcloud = function(link) {
 
-            SC.oEmbed($scope.sync.input.cloud,
+            SC.oEmbed($scope.room.input.cloud,
 
             {auto_play: true},  document.getElementById("SoundCloud"));
 
-            $scope.sync.embedCloud = link;
+            $scope.room.embedCloud = link;
           };
+
+          $scope.goHome = function() {
+            $state.go('app');
+          }
 
         });
 

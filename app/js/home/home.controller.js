@@ -16,8 +16,6 @@
         });
 
         $scope.login = function() {
-
-
           Auth.$authWithOAuthPopup('github')
             .catch(function(error){
               console.error(error);
