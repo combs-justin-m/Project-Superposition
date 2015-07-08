@@ -9,8 +9,9 @@
 
         Auth.$onAuth(function(x){
           $scope.authData = x;
-          console.log($stateParams.roomId);
+        });
 
+        $scope.roomName = $stateParams.roomId;
 
         // SYNC ROOM
 
@@ -20,41 +21,39 @@
         //
         // $scope.room = $scope.room || {};
 
-          Room($stateParams.roomId).$bindTo($scope, 'room').then(function () {
+        Room($stateParams.roomId).$bindTo($scope, 'room').then(function () {
 
-            $scope.embedify = function(link) {
+          $scope.embedify = function(link) {
 
-              var youtubeLinkPattern = /^http(s?):\/\/www\.youtu(\.be|be\.com)\/watch\?v=([-_a-zA-z0-9]+)$/;
+            var youtubeLinkPattern = /^http(s?):\/\/www\.youtu(\.be|be\.com)\/watch\?v=([-_a-zA-z0-9]+)$/;
 
-              var match = youtubeLinkPattern.exec(link);
-              if (match) {
-                $scope.room.embedYT = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
-              } else {
-                $scope.room.embedYT = '';
-              }
-            };
+            var match = youtubeLinkPattern.exec(link);
+            if (match) {
+              $scope.room.embedYT = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
+            } else {
+              $scope.room.embedYT = '';
+            }
+          };
 
-            $scope.spotify = function(link) {
+          $scope.spotify = function(link) {
 
-              $scope.room.embedSpot = 'https://embed.spotify.com/?uri=' + link;
-            };
+            $scope.room.embedSpot = 'https://embed.spotify.com/?uri=' + link;
+          };
 
-            $scope.soundcloud = function(link) {
+          $scope.soundcloud = function(link) {
 
-              SC.oEmbed($scope.room.input.cloud,
+            SC.oEmbed($scope.room.input.cloud,
 
-              {auto_play: true},  document.getElementById("SoundCloud"));
+            {auto_play: true},  document.getElementById("SoundCloud"));
 
-              $scope.room.embedCloud = link;
-            };
+            $scope.room.embedCloud = link;
+          };
 
-            $scope.goHome = function() {
-              $state.go('app');
-            };
+          $scope.goHome = function() {
+            $state.go('app');
+          };
 
-          }); //END BIND
-
-        });
+        }); //END BIND
 
       }]);
 

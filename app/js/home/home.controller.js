@@ -28,24 +28,8 @@
         };
 
         $scope.createRoom = function() {
-
           var data = Auth.$getAuth();
           $scope.room = Room(data.github.username);
-
-          console.log($scope.room.$id);
-
-          // var userRoom = $scope.room.$id;
-          // $stateParams.roomId = userRoom;
-
-          // $state.go('room')
-
-          // $scope.room.$save().then(function() {
-
-          //   $state.go('room');
-
-          // }).catch(function(error){
-          //   console.log(error);
-          // });
         };
 
       }]);

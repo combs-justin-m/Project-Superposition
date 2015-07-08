@@ -16,15 +16,27 @@
           .state('room', {
             url: '/room/:roomId',
             templateUrl: 'js/room/room.tpl.html',
-            controller: 'roomController'
+            controller: 'roomController',
+            resolve: {
+              "currentAuth": ["Auth", function(Auth) {
+                return Auth.$requireAuth();
+              }]
+            }
           });
 
         // Completely disable SCE.  For demonstration purposes only!
         // Do not use in production.
         $sceProvider.enabled(false);
 
-    }
-  ]);
+    }])
 
+    .run(["$rootScope", "$state",
+      function($rootScope, $state) {
+        $rootScope.$on("$stateChangeError", function(error) {
+          if (error === "AUTH_REQUIRED") {
+            $state.go("app");
+          }
+      });
+    }]);
 
 }());
