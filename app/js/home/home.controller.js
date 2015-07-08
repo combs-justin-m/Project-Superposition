@@ -32,7 +32,7 @@
           var data = Auth.$getAuth();
           $scope.room = Room(data.github.username);
 
-          console.log($scope.room.$id)
+          console.log($scope.room.$id);
 
           // var userRoom = $scope.room.$id;
           // $stateParams.roomId = userRoom;
