@@ -1,0 +1,32 @@
+<h2>{{roomName}} : FFA</h2>
+
+<!-- FRAMES -->
+<div class="container" ng-show="authData">
+
+  <!-- <h2>{{room.input.message}}</h2> -->
+  <!-- <input type="text" ng-model="room.input.message" placeholder="Message"> -->
+
+
+<div class="frame linkFrame" ng-show="linkFrame">
+  <iframe src="{{room.input.generalUrl}}" width="500px" height="400px"></iframe>
+  <input type="text" ng-model="room.input.generalUrl" placeholder="General URL">
+</div>
+
+<div class="frame youtubeFrame">
+  <iframe src="{{room.embedYT}}" width="500px" height="400px"></iframe>
+  <form ng-submit="embedify(room.input.yt)">
+    <input type="text" ng-model="room.input.yt" placeholder="YOUTUBE">
+  </form>
+</div>
+
+<div class="frame spotifyFrame">
+  <iframe src="{{room.embedSpot}}" width="500" height="400" allowtransparency="true"></iframe>
+  <form ng-submit="spotify(room.input.spot)">
+    <input type="text" ng-model="room.input.spot" placeholder="Spotify URI Link">
+  </form>
+</div>
+
+<div class="frame soundcloudFrame" id="SoundCloud"></div>
+  <form ng-submit="soundcloud(room.input.cloud)">
+    <input type="text" ng-model="room.input.cloud" placeholder="SoundCloud Link">
+  </form>

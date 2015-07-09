@@ -13,9 +13,19 @@
             templateUrl: 'js/home/home.tpl.html',
             controller: 'appController'
           })
-          .state('room', {
-            url: '/room/:roomId',
-            templateUrl: 'js/room/room.tpl.html',
+          .state('roomKOTH', {
+            url: '/room/kingofthehill/:roomId',
+            templateUrl: 'js/room/roomKOTH.tpl.html',
+            controller: 'roomController',
+            resolve: {
+              "currentAuth": ["Auth", function(Auth) {
+                return Auth.$requireAuth();
+              }]
+            }
+          })
+          .state('roomFFA', {
+            url: '/room/freeforall/:roomId',
+            templateUrl: 'js/room/roomFFA.tpl.html',
             controller: 'roomController',
             resolve: {
               "currentAuth": ["Auth", function(Auth) {

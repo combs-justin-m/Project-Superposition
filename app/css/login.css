@@ -8,20 +8,3 @@
     height: 200px;
     width: 200px;
     padding-bottom: 15px; }
-
-.user {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 100px;
-  padding-top: 30px;
-  text-align: center;
-  border: 1px solid lightgrey;
-  padding: 15px; }
-
-.profilePic {
-  height: 80px;
-  width: 80px; }
-
-.userName {
-  margin-bottom: 0; }
