@@ -1,0 +1,54 @@
+$youtube: #CC181E;
+$spotify: #2EBD59;
+$soundcloud: #FF5500;
+
+.container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.frame {
+  text-align: center;
+  width: 500px;
+  height: 435px;
+  margin: 30px auto;
+
+  input {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+#SoundCloud {
+  width: 500px;
+  height: 400px;
+  margin: 30px auto;
+}
+
+.fa {
+  margin-top: 13px;
+}
+
+.youtubeBtn {
+  background-color: $youtube !important;
+}
+
+.youtubeFrame {
+  background-color: $youtube;
+}
+
+.spotifyBtn {
+  background-color: $spotify !important;
+}
+
+.spotifyFrame {
+  background-color: $spotify;
+}
+
+.soundcloudBtn {
+  background-color: $soundcloud !important;
+}
+
+.soundcloudFrame {
+  background-color: $soundcloud;
+}

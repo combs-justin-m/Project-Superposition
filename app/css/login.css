@@ -1,0 +1,27 @@
+.login {
+  margin: 30px auto;
+  padding: 15px;
+  text-align: center;
+  width: 200px;
+  border: 1px solid lightgrey; }
+  .login img {
+    height: 200px;
+    width: 200px;
+    padding-bottom: 15px; }
+
+.user {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 100px;
+  padding-top: 30px;
+  text-align: center;
+  border: 1px solid lightgrey;
+  padding: 15px; }
+
+.profilePic {
+  height: 80px;
+  width: 80px; }
+
+.userName {
+  margin-bottom: 0; }

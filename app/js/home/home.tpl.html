@@ -3,6 +3,7 @@
 <div class="user" ng-show="authData">
   <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
   <md-button class="md-raised logoutBtn" ng-click="logout()">Logout</md-button>
+  <a href="/#/room/{{room.$id}}"><md-button class="md-raised roomBtn" ng-click="createRoom()">My Room</md-button></a>
   <p class="userName">{{authData.github.displayName}}</p>
 </div>
 
@@ -10,9 +11,4 @@
 <div class="login" ng-hide="authData">
   <img ng-src="https://www.clever-cloud.com/assets/img/github-icon.svg">
   <md-button class="md-raised" ng-click="login()">Log in With GitHub</md-button>
-</div>
-
-<!-- YOUR ROOM -->
-<div class="room" ng-show="authData">
-  <a href="/#/room/{{room.$id}}"><md-button class="md-raised roomBtn" ng-click="createRoom()">Go To Your Room</md-button></a>
 </div>

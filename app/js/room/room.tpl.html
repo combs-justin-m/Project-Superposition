@@ -1,23 +1,4 @@
-<!-- NAN BTNS -->
-<md-button class="md-fab md-primary homeBtn" ng-click="goHome()" aria-label="Button">
-  <i class="fa fa-home fa-2x"></i>
-</md-button>
-
-<md-button class="md-fab md-primary linkBtn" ng-click="linkFrame = !linkFrame" aria-label="Button">
-  <i class="fa fa-link fa-2x"></i>
-</md-button>
-
-<md-button class="md-fab md-primary youtubeBtn" ng-click="youtubeFrame = !youtubeFrame" aria-label="Button">
-  <i class="fa fa-youtube-play fa-2x"></i>
-</md-button>
-
-<md-button class="md-fab md-primary spotifyBtn" ng-click="spotifyFrame = !spotifyFrame" aria-label="Button">
-  <i class="fa fa-spotify fa-2x"></i>
-</md-button>
-
-<md-button class="md-fab md-primary soundcloudBtn" ng-click="soundcloudFrame = !soundcloudFrame" aria-label="Button">
-  <i class="fa fa-soundcloud fa-2x"></i>
-</md-button>
+<!-- NAV BTNS -->
 
 <h2>{{roomName}}</h2>
 
@@ -27,27 +8,49 @@
   <!-- <h2>{{room.input.message}}</h2> -->
   <!-- <input type="text" ng-model="room.input.message" placeholder="Message"> -->
 
+  <md-content class="md-padding">
+      <md-tabs md-border-bottom>
+        <md-tab id="tab1">
+          <md-tab-label>Link</md-tab-label>
+          <md-tab-body>
+            <div class="frame linkFrame md-whiteframe-z3">
+              <iframe src="{{room.input.generalUrl}}" width="500px" height="400px"></iframe>
+              <input type="text" ng-model="room.input.generalUrl" placeholder="General URL">
+            </div>
+          </md-tab-body>
+        </md-tab>
+        <md-tab id="tab2">
+          <md-tab-label>YouTube</md-tab-label>
+          <md-tab-body>
+            <div class="frame youtubeFrame md-whiteframe-z3">
+              <iframe src="{{room.embedYT}}" width="500px" height="400px"></iframe>
+              <form ng-submit="embedify(room.input.yt)">
+                <input type="text" ng-model="room.input.yt" placeholder="YOUTUBE">
+              </form>
+            </div>
+          </md-tab-body>
+        </md-tab>
+        <md-tab id="tab3">
+          <md-tab-label>Spotify</md-tab-label>
+          <md-tab-body>
+            <div class="frame spotifyFrame md-whiteframe-z3">
+              <iframe src="{{room.embedSpot}}" width="500" height="400" allowtransparency="true"></iframe>
+              <form ng-submit="spotify(room.input.spot)">
+                <input type="text" ng-model="room.input.spot" placeholder="Spotify URI Link">
+              </form>
+            </div>
+          </md-tab-body>
+        </md-tab>
+        <md-tab id="tab4">
+          <md-tab-label>SoundCloud</md-tab-label>
+          <md-tab-body>
+            <div class="frame soundcloudFrame md-whiteframe-z3" id="SoundCloud"></div>
+              <form ng-submit="soundcloud(room.input.cloud)">
+                <input type="text" ng-model="room.input.cloud" placeholder="SoundCloud Link">
+              </form>
+          </md-tab-body>
+        </md-tab>
+      </md-tabs>
+    </md-content>
 
-<div class="frame linkFrame" ng-show="linkFrame">
-  <iframe src="{{room.input.generalUrl}}" width="500px" height="400px"></iframe>
-  <input type="text" ng-model="room.input.generalUrl" placeholder="General URL">
 </div>
-
-<div class="frame youtubeFrame" ng-show="youtubeFrame">
-  <iframe src="{{room.embedYT}}" width="500px" height="400px"></iframe>
-  <form ng-submit="embedify(room.input.yt)">
-    <input type="text" ng-model="room.input.yt" placeholder="YOUTUBE">
-  </form>
-</div>
-
-<div class="frame spotifyFrame" ng-show="spotifyFrame">
-  <iframe src="{{room.embedSpot}}" width="500" height="400" allowtransparency="true"></iframe>
-  <form ng-submit="spotify(room.input.spot)">
-    <input type="text" ng-model="room.input.spot" placeholder="Spotify URI Link">
-  </form>
-</div>
-
-<div class="frame soundcloudFrame" id="SoundCloud" ng-show="soundcloudFrame"></div>
-  <form ng-submit="soundcloud(room.input.cloud)">
-    <input type="text" ng-model="room.input.cloud" placeholder="SoundCloud Link">
-  </form>

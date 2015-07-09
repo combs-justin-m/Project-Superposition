@@ -13,6 +13,8 @@
 
         $scope.roomName = $stateParams.roomId;
 
+        $scope.linkFrame = true;
+
         // SYNC ROOM
 
         // var ref = new Firebase('radiant-heat-3085.firebaseIO.com');
@@ -22,6 +24,10 @@
         // $scope.room = $scope.room || {};
 
         Room($stateParams.roomId).$bindTo($scope, 'room').then(function () {
+
+          $scope.clearLink = function() {
+            $scope.linkFrame = !$scope.linkFrame;
+          }
 
           $scope.embedify = function(link) {
 
