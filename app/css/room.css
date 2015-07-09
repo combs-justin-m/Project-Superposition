@@ -18,11 +18,6 @@
     display: block;
     margin: 0 auto; }
 
-#SoundCloud {
-  width: 500px;
-  height: 400px;
-  margin: 30px auto; }
-
 .youtubeBtn {
   background-color: #CC181E !important; }
 
@@ -41,3 +36,11 @@
 
 .soundcloudFrame {
   background-color: #FF5500; }
+
+.soundInput {
+  position: relative;
+  top: -60px; }
+
+.soundIcon {
+  font-size: 200px;
+  margin-top: 20%; }

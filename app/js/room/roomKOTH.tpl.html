@@ -62,9 +62,11 @@
         <md-tab id="tab4">
           <md-tab-label>SoundCloud</md-tab-label>
           <md-tab-body>
-            <div class="frame soundcloudFrame md-whiteframe-z4" id="SoundCloud"></div>
+            <div class="soundcloudFrame frame md-whiteframe-z4" id="SoundCloud">
+              <i class="fa fa-soundcloud soundIcon"></i>
+            </div>
               <form ng-submit="soundcloud(room.input.cloud)">
-                <input type="text" ng-model="room.input.cloud" placeholder="SoundCloud Link">
+                <input class="soundInput" type="text" ng-model="room.input.cloud" placeholder="SoundCloud Link">
               </form>
           </md-tab-body>
         </md-tab>
