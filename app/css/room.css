@@ -1,6 +1,13 @@
+.roomTitle {
+  float: left; }
+
+.roomMenu {
+  float: left; }
+
 .container {
   text-align: center;
-  margin: 0 auto; }
+  margin: 0 auto;
+  clear: both; }
 
 .frame {
   text-align: center;
@@ -16,9 +23,6 @@
   height: 400px;
   margin: 30px auto; }
 
-.fa {
-  margin-top: 13px; }
-
 .youtubeBtn {
   background-color: #CC181E !important; }
 
@@ -29,7 +33,8 @@
   background-color: #2EBD59 !important; }
 
 .spotifyFrame {
-  background-color: #2EBD59; }
+  background-color: #2EBD59;
+  width: 317px; }
 
 .soundcloudBtn {
   background-color: #FF5500 !important; }

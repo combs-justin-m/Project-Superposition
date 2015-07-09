@@ -59,6 +59,11 @@
             $state.go('app');
           };
 
+          $scope.logout = function() {
+            Auth.$unauth();
+            $state.go('app');
+          };
+
         }); //END BIND
 
       }]);

@@ -2,9 +2,18 @@ $youtube: #CC181E;
 $spotify: #2EBD59;
 $soundcloud: #FF5500;
 
+.roomTitle {
+  float: left;
+}
+
+.roomMenu {
+  float: left;
+}
+
 .container {
   text-align: center;
   margin: 0 auto;
+  clear: both;
 }
 
 .frame {
@@ -25,10 +34,6 @@ $soundcloud: #FF5500;
   margin: 30px auto;
 }
 
-.fa {
-  margin-top: 13px;
-}
-
 .youtubeBtn {
   background-color: $youtube !important;
 }
@@ -43,6 +48,7 @@ $soundcloud: #FF5500;
 
 .spotifyFrame {
   background-color: $spotify;
+  width: 317px;
 }
 
 .soundcloudBtn {

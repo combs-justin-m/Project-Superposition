@@ -1,6 +1,24 @@
-<!-- NAV BTNS -->
+<div class="user md-whiteframe-z2" ng-show="authData">
+  <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
+  <p class="userName">{{authData.github.displayName}}</p>
+  <a href=""><md-button class="md-raised roomBtn" ng-click="goHome()">Home</md-button></a>
+  <md-button class="md-raised logoutBtn" ng-click="logout()">Logout</md-button>
+</div>
 
-<h2>{{roomName}} : King of the Hill</h2>
+<!-- NAV BTNS -->
+<h2 class="roomTitle">{{roomName}} : </h2>
+<md-menu class="roomMenu" md-position-mode="target-right target">
+  <md-button aria-label="Layout Menu" class="md-raised" ng-click="$mdOpenMenu()">
+    King of the Hill <i class="fa fa-caret-down" md-menu-origin></i>
+  </md-button>
+  <md-menu-content width="2">
+    <md-menu-item>
+      <md-button>
+        <a href="/#/room/freeforall/{{room.$id}}" md-menu-align-target>Free For All</a>
+      </md-button>
+    </md-menu-item>
+  </md-menu-content>
+</md-menu>
 
 <!-- FRAMES -->
 <div class="container" ng-show="authData">
@@ -13,8 +31,8 @@
         <md-tab id="tab1">
           <md-tab-label>Link</md-tab-label>
           <md-tab-body>
-            <div class="frame linkFrame md-whiteframe-z3">
-              <iframe src="{{room.input.generalUrl}}" width="500px" height="400px"></iframe>
+            <div class="frame linkFrame md-whiteframe-z4">
+              <iframe src="{{room.input.generalUrl}}" width="500px" height="400px" frameborder="0"></iframe>
               <input type="text" ng-model="room.input.generalUrl" placeholder="General URL">
             </div>
           </md-tab-body>
@@ -22,8 +40,8 @@
         <md-tab id="tab2">
           <md-tab-label>YouTube</md-tab-label>
           <md-tab-body>
-            <div class="frame youtubeFrame md-whiteframe-z3">
-              <iframe src="{{room.embedYT}}" width="500px" height="400px"></iframe>
+            <div class="frame youtubeFrame md-whiteframe-z4">
+              <iframe src="{{room.embedYT}}" width="500px" height="400px" frameborder="0"></iframe>
               <form ng-submit="embedify(room.input.yt)">
                 <input type="text" ng-model="room.input.yt" placeholder="YOUTUBE">
               </form>
@@ -33,8 +51,8 @@
         <md-tab id="tab3">
           <md-tab-label>Spotify</md-tab-label>
           <md-tab-body>
-            <div class="frame spotifyFrame md-whiteframe-z3">
-              <iframe src="{{room.embedSpot}}" width="500" height="400" allowtransparency="true"></iframe>
+            <div class="frame spotifyFrame md-whiteframe-z4">
+              <iframe src="{{room.embedSpot}}" width="317" height="400" allowtransparency="true" frameborder="0"></iframe>
               <form ng-submit="spotify(room.input.spot)">
                 <input type="text" ng-model="room.input.spot" placeholder="Spotify URI Link">
               </form>
@@ -44,7 +62,7 @@
         <md-tab id="tab4">
           <md-tab-label>SoundCloud</md-tab-label>
           <md-tab-body>
-            <div class="frame soundcloudFrame md-whiteframe-z3" id="SoundCloud"></div>
+            <div class="frame soundcloudFrame md-whiteframe-z4" id="SoundCloud"></div>
               <form ng-submit="soundcloud(room.input.cloud)">
                 <input type="text" ng-model="room.input.cloud" placeholder="SoundCloud Link">
               </form>
