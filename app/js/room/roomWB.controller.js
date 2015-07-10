@@ -4,21 +4,34 @@
 
   angular.module('app')
 
-    .controller('roomWBController', [ '$scope', '$firebaseObject', '$firebaseArray', '$http', 'Auth', 'Room', '$stateParams', '$state',
-      function($scope, $firebaseObject, $firebaseArray, $http, Auth, Room, $stateParams, $state){
+    .controller('roomWBController', [ '$scope', '$firebaseObject', '$firebaseArray', '$http', 'Auth', 'Room', 'roomWB', '$stateParams', '$state',
+      function($scope, $firebaseObject, $firebaseArray, $http, Auth, Room, roomWB, $stateParams, $state){
 
-        var roomWBref = new Firebase("https://radiant-heat-3085.firebaseio.com/roomWB");
-        // download the data from a Firebase reference into a (pseudo read-only) array
-        // all server changes are applied in realtime
-        $scope.messages = $firebaseArray(roomWBref);
+        $scope.links = roomWB;
 
+        $scope.addLink = function() {
+          $scope.links.$add({
+            content: $scope.link,
+          });
+          $scope.link = "";
+        };
 
+        $scope.addYoutube = function(link) {
 
+          var youtubeLinkPattern = /^http(s?):\/\/www\.youtu(\.be|be\.com)\/watch\?v=([-_a-zA-z0-9]+)$/;
 
+          var match = youtubeLinkPattern.exec(link);
+          if (match) {
+            $scope.linkYT = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
+          } else {
+            $scope.linkYT = '';
+          }
 
-
-
-
+          $scope.links.$add({
+            content: $scope.linkYT,
+          });
+          $scope.linkYT = "";
+        };
 
         Auth.$onAuth(function(x){
           $scope.authData = x;

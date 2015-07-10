@@ -35,25 +35,40 @@
     </md-menu-item>
   </md-menu-content>
 </md-menu>
+
+<form ng-submit="addLink()">
+  <input type="text" placeholder="Link URL" ng-model="link">
+</form>
+
+<form ng-submit="addYoutube(linkYT)">
+  <input type="text" placeholder="YouTube URL" ng-model="linkYT">
+</form>
+
 <!-- FRAMES -->
 <div class="container" ng-show="authData">
 
   <!-- <h2>{{room.input.message}}</h2> -->
   <!-- <input type="text" ng-model="room.input.message" placeholder="Message"> -->
 
+<div class="frame linkFrame md-whiteframe-z4 dragme" ng-repeat="link in links">
+  <iframe src="{{link.content}}" width="500px" height="400px" frameborder="0"></iframe>
+  <script>
+    $(function() {
+      $( ".dragme" ).draggable();
+    });
+  </script>
+</div>
+
+<!-- <div class="frame youtubeFrame md-whiteframe-z4" ng-repeat="linkYT in links">
+  <iframe src="{{linkYT.content}}" width="500px" height="400px" frameborder="0"></iframe>
+  <script>
+    $(function() {
+      $( ".dragme" ).draggable();
+    });
+  </script>
+</div> -->
+
 <!--
-<div class="frame linkFrame md-whiteframe-z4 dragme resizeme">
-  <iframe src="{{room.input.generalUrl}}" width="500px" height="400px" frameborder="0"></iframe>
-  <input type="text" ng-model="room.input.generalUrl" placeholder="General URL">
-</div>
-
-<div class="frame youtubeFrame md-whiteframe-z4 dragme">
-  <iframe src="{{room.embedYT}}" width="500px" height="400px" frameborder="0"></iframe>
-  <form ng-submit="embedify(room.input.yt)">
-    <input type="text" ng-model="room.input.yt" placeholder="YOUTUBE">
-  </form>
-</div>
-
 <div class="frame spotifyFrame md-whiteframe-z4 dragme">
   <iframe src="{{room.embedSpot}}" width="317" height="400" allowtransparency="true" frameborder="0"></iframe>
   <form ng-submit="spotify(room.input.spot)">

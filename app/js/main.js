@@ -2,8 +2,6 @@
 
   'use strict';
 
-  $('.dragme').draggable();
-
   angular.module('app', ['firebase', 'ui.router', 'ngMaterial'])
 
     .config(['$sceProvider', '$stateProvider',

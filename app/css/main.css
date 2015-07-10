@@ -72,6 +72,9 @@
   font-size: 200px;
   margin-top: 20%; }
 
+.linkIcon {
+  margin-top: 14px; }
+
 a {
   text-decoration: none;
   color: #1F1F1F; }
