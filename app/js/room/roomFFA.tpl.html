@@ -14,7 +14,17 @@
   <md-menu-content width="2">
     <md-menu-item>
       <md-button>
+        <a href="/#/room/roundrobin/{{room.$id}}" md-menu-align-target>Round Robin</a>
+      </md-button>
+    </md-menu-item>
+    <md-menu-item>
+      <md-button>
         <a href="/#/room/kingofthehill/{{room.$id}}" md-menu-align-target>King of the Hill</a>
+      </md-button>
+    </md-menu-item>
+    <md-menu-item>
+      <md-button>
+        <a href="/#/room/whiteboard/{{room.$id}}" md-menu-align-target>Whiteboard</a>
       </md-button>
     </md-menu-item>
   </md-menu-content>
@@ -26,7 +36,7 @@
   <!-- <input type="text" ng-model="room.input.message" placeholder="Message"> -->
 
 
-<div class="frame linkFrame md-whiteframe-z4" ng-show="linkFrame">
+<div class="frame linkFrame md-whiteframe-z4 dragme">
   <iframe src="{{room.input.generalUrl}}" width="500px" height="400px" frameborder="0"></iframe>
   <input type="text" ng-model="room.input.generalUrl" placeholder="General URL">
 </div>

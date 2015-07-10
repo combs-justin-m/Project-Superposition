@@ -4,8 +4,21 @@
 
   angular.module('app')
 
-    .controller('roomController', [ '$scope', '$firebaseObject', '$http', 'Auth', 'Room', '$stateParams', '$state',
-      function($scope, $firebaseObject, $http, Auth, Room, $stateParams, $state){
+    .controller('roomWBController', [ '$scope', '$firebaseObject', '$firebaseArray', '$http', 'Auth', 'Room', '$stateParams', '$state',
+      function($scope, $firebaseObject, $firebaseArray, $http, Auth, Room, $stateParams, $state){
+
+        var roomWBref = new Firebase("https://radiant-heat-3085.firebaseio.com/roomWB");
+        // download the data from a Firebase reference into a (pseudo read-only) array
+        // all server changes are applied in realtime
+        $scope.messages = $firebaseArray(roomWBref);
+
+
+
+
+
+
+
+
 
         Auth.$onAuth(function(x){
           $scope.authData = x;

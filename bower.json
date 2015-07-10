@@ -24,7 +24,8 @@
     "angularfire": "~1.1.2",
     "angular-ui-router": "~0.2.15",
     "angular-material": "~0.10.0",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "jquery-ui": "~1.11.4"
   },
   "devDependencies": {
     "mocha": "~2.2.5",

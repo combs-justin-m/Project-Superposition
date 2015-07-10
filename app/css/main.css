@@ -73,7 +73,8 @@
   margin-top: 20%; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #1F1F1F; }
 
 a:visited {
   color: #1F1F1F; }

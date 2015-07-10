@@ -2,6 +2,8 @@
 
   'use strict';
 
+  $('.dragme').draggable();
+
   angular.module('app', ['firebase', 'ui.router', 'ngMaterial'])
 
     .config(['$sceProvider', '$stateProvider',
@@ -13,9 +15,9 @@
             templateUrl: 'js/home/home.tpl.html',
             controller: 'appController'
           })
-          .state('roomKOTH', {
-            url: '/room/kingofthehill/:roomId',
-            templateUrl: 'js/room/roomKOTH.tpl.html',
+          .state('roomRR', {
+            url: '/room/roundrobin/:roomId',
+            templateUrl: 'js/room/roomRR.tpl.html',
             controller: 'roomController',
             resolve: {
               "currentAuth": ["Auth", function(Auth) {
@@ -27,6 +29,26 @@
             url: '/room/freeforall/:roomId',
             templateUrl: 'js/room/roomFFA.tpl.html',
             controller: 'roomController',
+            resolve: {
+              "currentAuth": ["Auth", function(Auth) {
+                return Auth.$requireAuth();
+              }]
+            }
+          })
+          .state('roomKOTH', {
+            url: '/room/kingofthehill/:roomId',
+            templateUrl: 'js/room/roomKOTH.tpl.html',
+            controller: 'roomController',
+            resolve: {
+              "currentAuth": ["Auth", function(Auth) {
+                return Auth.$requireAuth();
+              }]
+            }
+          })
+          .state('roomWB', {
+            url: '/room/whiteboard/:roomId',
+            templateUrl: 'js/room/roomWB.tpl.html',
+            controller: 'roomWBController',
             resolve: {
               "currentAuth": ["Auth", function(Auth) {
                 return Auth.$requireAuth();

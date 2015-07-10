@@ -3,7 +3,7 @@
 <div class="user" ng-show="authData">
   <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
   <p class="userName">{{authData.github.displayName}}</p>
-  <a href="/#/room/kingofthehill/{{room.$id}}"><md-button class="md-raised roomBtn" ng-click="createRoom()">My Room</md-button></a>
+  <a href="/#/room/roundrobin/{{room.$id}}"><md-button class="md-raised roomBtn" ng-click="createRoom()">My Room</md-button></a>
   <md-button class="md-raised logoutBtn" ng-click="logout()">Logout</md-button>
 </div>
 
