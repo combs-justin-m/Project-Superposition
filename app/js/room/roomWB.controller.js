@@ -15,7 +15,6 @@
         //   }
         // });
 
-
         $scope.links = roomWB($stateParams.roomId);
 
         $scope.addLink = function() {
