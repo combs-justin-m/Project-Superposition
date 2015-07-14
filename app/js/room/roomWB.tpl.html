@@ -50,13 +50,9 @@
   <!-- <h2>{{room.input.message}}</h2> -->
   <!-- <input type="text" ng-model="room.input.message" placeholder="Message"> -->
 
-<div class="frame linkFrame md-whiteframe-z4 dragme" ng-repeat="link in links">
+<div draggable class="frame linkFrame md-whiteframe-z4 dragme" ng-repeat="link in links" style="transform: translate({{link.left}}px,{{link.top}}px)">
   <iframe src="{{link.content}}" width="500px" height="400px" frameborder="0"></iframe>
-  <script>
-    $(function() {
-      $( ".dragme" ).draggable();
-    });
-  </script>
+
 </div>
 
 <!-- <div class="frame youtubeFrame md-whiteframe-z4" ng-repeat="linkYT in links">

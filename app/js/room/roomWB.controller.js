@@ -7,7 +7,16 @@
     .controller('roomWBController', [ '$scope', '$firebaseObject', '$firebaseArray', '$http', 'Auth', 'Room', 'roomWB', '$stateParams', '$state',
       function($scope, $firebaseObject, $firebaseArray, $http, Auth, Room, roomWB, $stateParams, $state){
 
-        $scope.links = roomWB;
+
+        // angular.element( "article" ).draggable({
+        //   drag: function( event, ui ) {
+        //     $scope.link.left = ui.position.left;
+        //     $scope.link.top = ui.position.top;
+        //   }
+        // });
+
+
+        $scope.links = roomWB($stateParams.roomId);
 
         $scope.addLink = function() {
           $scope.links.$add({
