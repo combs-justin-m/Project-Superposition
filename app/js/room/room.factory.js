@@ -15,16 +15,16 @@
           return $firebaseObject(roomRef);
       };
     }])
-    .factory("roomWB", ["$firebaseArray",
-      function($firebaseArray) {
+    .factory("roomWB", ["$firebaseObject",
+      function($firebaseObject) {
 
-          return function(username) {
+        return function(username) {
           // create a reference to the database where we will store our data
-          // var randomRoomId = Math.round(Math.random() * 100000000);
-          var ref = new Firebase("https://radiant-heat-3085.firebaseio.com/roomWB/");
+          var randomRoomId = Math.round(Math.random() * 100000000);
+          var ref = new Firebase("https://radiant-heat-3085.firebaseio.com/roomWB/" + randomRoomId);
           var roomRef = ref.child(username);
 
-          return $firebaseArray(roomRef);
+          return $firebaseObject(roomRef);
       }
     }]);
 

@@ -7,39 +7,31 @@
     .controller('roomWBController', [ '$scope', '$firebaseObject', '$firebaseArray', '$http', 'Auth', 'Room', 'roomWB', '$stateParams', '$state',
       function($scope, $firebaseObject, $firebaseArray, $http, Auth, Room, roomWB, $stateParams, $state){
 
-
-        // angular.element( "article" ).draggable({
-        //   drag: function( event, ui ) {
-        //     $scope.link.left = ui.position.left;
-        //     $scope.link.top = ui.position.top;
+        // $scope.links = roomWB($stateParams.roomId);
+        //
+        // $scope.addLink = function() {
+        //   $scope.links.$add({
+        //     content: $scope.link,
+        //   });
+        //   $scope.link = "";
+        // };
+        //
+        // $scope.addYoutube = function(link) {
+        //
+        //   var youtubeLinkPattern = /^http(s?):\/\/www\.youtu(\.be|be\.com)\/watch\?v=([-_a-zA-z0-9]+)$/;
+        //
+        //   var match = youtubeLinkPattern.exec(link);
+        //   if (match) {
+        //     $scope.linkYT = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
+        //   } else {
+        //     $scope.linkYT = '';
         //   }
-        // });
-
-        $scope.links = roomWB($stateParams.roomId);
-
-        $scope.addLink = function() {
-          $scope.links.$add({
-            content: $scope.link,
-          });
-          $scope.link = "";
-        };
-
-        $scope.addYoutube = function(link) {
-
-          var youtubeLinkPattern = /^http(s?):\/\/www\.youtu(\.be|be\.com)\/watch\?v=([-_a-zA-z0-9]+)$/;
-
-          var match = youtubeLinkPattern.exec(link);
-          if (match) {
-            $scope.linkYT = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
-          } else {
-            $scope.linkYT = '';
-          }
-
-          $scope.links.$add({
-            content: $scope.linkYT,
-          });
-          $scope.linkYT = "";
-        };
+        //
+        //   $scope.links.$add({
+        //     content: $scope.linkYT,
+        //   });
+        //   $scope.linkYT = "";
+        // };
 
         Auth.$onAuth(function(x){
           $scope.authData = x;
@@ -54,6 +46,8 @@
         // var syncRoom = $firebaseObject(ref);
         //
         // $scope.room = $scope.room || {};
+
+        $scope.addLink = function() {
 
         Room($stateParams.roomId).$bindTo($scope, 'room').then(function () {
 
@@ -93,6 +87,7 @@
           };
 
         }); //END BIND
+      }
 
       }]);
 
