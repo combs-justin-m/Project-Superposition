@@ -29,35 +29,81 @@
     </md-menu-item>
   </md-menu-content>
 </md-menu>
-<!-- FRAMES -->
-<div class="container" ng-show="authData">
 
-  <!-- <h2>{{room.input.message}}</h2> -->
-  <!-- <input type="text" ng-model="room.input.message" placeholder="Message"> -->
+<style>
+    html { height: 100%; }
+    body { margin: 0; height: 100%; }
+    /* Height / width / positioning can be customized for your use case.
+       For demo purposes, we make the user list 175px and firepad fill the rest of the page. */
+    #userlist {
+      position: absolute; left: 0; top: 50px; bottom: 0; height: auto;
+      width: 175px; border-right: 1px solid lightgrey;
+    }
+    #firepad {
+      position: absolute; left: 175px; top: 50px; bottom: 0; right: 0; height: auto;
+      border-left: 1px solid lightgrey;
+    }
 
-<!--
-<div class="frame linkFrame md-whiteframe-z4" ng-show="linkFrame">
-  <iframe src="{{room.input.generalUrl}}" width="500px" height="400px" frameborder="0"></iframe>
-  <input type="text" ng-model="room.input.generalUrl" placeholder="General URL">
-</div>
+    .powered-by-firepad {
+      visibility: hidden;
+    }
+  </style>
 
-<div class="frame youtubeFrame md-whiteframe-z4">
-  <iframe src="{{room.embedYT}}" width="500px" height="400px" frameborder="0"></iframe>
-  <form ng-submit="embedify(room.input.yt)">
-    <input type="text" ng-model="room.input.yt" placeholder="YOUTUBE">
-  </form>
-</div>
+  <div id="userlist"></div>
+  <div id="firepad"></div>
 
-<div class="frame spotifyFrame md-whiteframe-z4">
-  <iframe src="{{room.embedSpot}}" width="317" height="400" allowtransparency="true" frameborder="0"></iframe>
-  <form ng-submit="spotify(room.input.spot)">
-    <input type="text" ng-model="room.input.spot" placeholder="Spotify URI Link">
-  </form>
-</div>
+  <script>
 
-<div class="soundcloudFrame frame md-whiteframe-z4" id="SoundCloud">
-  <i class="fa fa-soundcloud soundIcon"></i>
-</div>
-  <form ng-submit="soundcloud(room.input.cloud)">
-    <input class="soundInput" type="text" ng-model="room.input.cloud" placeholder="SoundCloud Link">
-  </form> -->
+
+    // function init() {
+    //
+    //
+    //   var firepadRef = new Firebase('https://radiant-heat-3085.firebaseio.com/');
+    //
+    //   //// Create CodeMirror (with lineWrapping on).
+    //   var codeMirror = CodeMirror(document.getElementById('firepad'), {
+    //     // lineNumbers: true,
+    //     // mode: 'javascript',
+    //     lineWrapping: true
+    //     });
+    //
+    //   // Create a random ID to use as our user ID (we must give this to firepad and FirepadUserList).
+    //   var userId = Math.floor(Math.random() * 9999999999).toString();
+    //
+    //   //// Create Firepad (with rich text features and our desired userId).
+    //   var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
+    //     richTextToolbar: true,
+    //     richTextShortcuts: true,
+    //     userId: userId
+    //     });
+    //
+    //   //// Create FirepadUserList (with our desired userId).
+    //   var firepadUserList = FirepadUserList.fromDiv(firepadRef.child('users'),
+    //       document.getElementById('userlist'), userId);
+    //
+    //   //// Initialize contents.
+    //   firepad.on('ready', function() {
+    //     if (firepad.isHistoryEmpty()) {
+    //       firepad.setText('Check out the user list to the left!');
+    //     }
+    //   });
+    //
+    // }
+
+    // Helper to get hash from end of URL or generate a random one.
+    // function getExampleRef() {
+    //   var ref = new Firebase('https://radiant-heat-3085.firebaseio.com/');
+    //   var hash = window.location.hash.replace(/#/g, '');
+    //   if (hash) {
+    //     ref = ref.child(hash);
+    //   } else {
+    //     ref = ref.push(); // generate unique location.
+    //     window.location = window.location + '#' + ref.key(); // add it as a hash to the URL.
+    //   }
+    //   if (typeof console !== 'undefined')
+    //     console.log('Firebase data: ', ref.toString());
+    //   return ref;
+    // }
+
+    // init();
+  </script>

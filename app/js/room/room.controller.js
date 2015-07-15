@@ -7,6 +7,38 @@
     .controller('roomController', [ '$scope', '$firebaseObject', '$http', 'Auth', 'Room', '$stateParams', '$state',
       function($scope, $firebaseObject, $http, Auth, Room, $stateParams, $state){
 
+
+        var firepadRef = new Firebase('https://radiant-heat-3085.firebaseio.com/');
+
+        //// Create CodeMirror (with lineWrapping on).
+        var codeMirror = CodeMirror(document.getElementById('firepad'), {
+          // lineNumbers: true,
+          // mode: 'javascript',
+          lineWrapping: true
+          });
+
+        // Create a random ID to use as our user ID (we must give this to firepad and FirepadUserList).
+        var userId = Math.floor(Math.random() * 9999999999).toString();
+
+        //// Create Firepad (with rich text features and our desired userId).
+        var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
+          richTextToolbar: true,
+          richTextShortcuts: true,
+          userId: userId
+          });
+
+        //// Create FirepadUserList (with our desired userId).
+        var firepadUserList = FirepadUserList.fromDiv(firepadRef.child('users'),
+            document.getElementById('userlist'), userId);
+
+        //// Initialize contents.
+        firepad.on('ready', function() {
+          if (firepad.isHistoryEmpty()) {
+            firepad.setText('Check out the user list to the left!');
+          }
+        });
+
+
         Auth.$onAuth(function(x){
           $scope.authData = x;
         });
@@ -52,22 +84,8 @@
 
         }); //END BIND
 
+
       }])
 
-      .directive('draggable', function() {
-        return {
-          restrict:'A',
-          link: function(scope, element, attrs) {
-            element.draggable({
-              drag: function( event, ui ) {
-                // console.log(ui.position);
-
-                room.pos.left = ui.position.left;
-                // $scope.room.linkTop = ui.position.top;
-              }
-            });
-          }
-        };
-      });
 
 }());

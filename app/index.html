@@ -11,7 +11,7 @@
 <body ng-app="app">
 
   <header></header>
-  <main ui-view></main>
+    <main ui-view></main>
   <footer></footer>
 
   <!-- VENDOR -->
@@ -26,6 +26,30 @@
   <script src="js/vendor/angular-animate.js"></script>
   <script src="js/vendor/angular-aria.js"></script>
 
+  <!-- SOUNDCLOUD -->
+  <script src="//connect.soundcloud.com/sdk-2.0.0.js"></script>
+  <script>
+    SC.initialize({
+      client_id: "8086264c30fb0e585d20ce56ddcc3e72",
+    });
+  </script>
+
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+  <!-- CodeMirror -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/mode/javascript/javascript.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.css" />
+
+  <!-- Firepad -->
+  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.1.0/firepad.css" />
+  <script src="https://cdn.firebase.com/libs/firepad/1.1.0/firepad.min.js"></script>
+
+  <!-- Include example userlist script / CSS.
+       Can be downloaded from: https://github.com/firebase/firepad/tree/master/examples/ -->
+  <script src="firepad-userlist.js"></script>
+  <link rel="stylesheet" href="firepad-userlist.css" />
+
   <!-- MAIN -->
   <script src="js/main.js"></script>
 
@@ -36,14 +60,6 @@
   <script src="js/room/room.factory.js"></script>
   <script src="js/room/room.controller.js"></script>
   <script src="js/room/roomWB.controller.js"></script>
-
-  <!-- SOUNDCLOUD -->
-  <script src="//connect.soundcloud.com/sdk-2.0.0.js"></script>
-  <script>
-    SC.initialize({
-      client_id: "8086264c30fb0e585d20ce56ddcc3e72",
-    });
-  </script>
 
 
 </body>
