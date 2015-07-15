@@ -13,14 +13,6 @@
 
         $scope.roomName = $stateParams.roomId;
 
-        // SYNC ROOM
-
-        // var ref = new Firebase('radiant-heat-3085.firebaseIO.com');
-        //
-        // var syncRoom = $firebaseObject(ref);
-        //
-        // $scope.room = $scope.room || {};
-
         Room($stateParams.roomId).$bindTo($scope, 'room').then(function () {
 
           $scope.embedify = function(link) {
@@ -60,6 +52,22 @@
 
         }); //END BIND
 
-      }]);
+      }])
+
+      .directive('draggable', function() {
+        return {
+          restrict:'A',
+          link: function(scope, element, attrs) {
+            element.draggable({
+              drag: function( event, ui ) {
+                // console.log(ui.position);
+
+                room.pos.left = ui.position.left;
+                // $scope.room.linkTop = ui.position.top;
+              }
+            });
+          }
+        };
+      });
 
 }());

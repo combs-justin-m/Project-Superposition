@@ -69,22 +69,4 @@
       });
     }])
 
-    .directive('draggable', function() {
-      return {
-
-        restrict:'A',
-
-        link: function(scope, element, attrs) {
-          element.draggable({
-            drag: function( event, ui ) {
-              scope.link.left = ui.position.left;
-              scope.link.top = ui.position.top;
-
-              console.log(scope.link.left);
-            }
-          });
-        }
-      };
-    });
-
 }());

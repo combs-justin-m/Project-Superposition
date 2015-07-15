@@ -5,12 +5,6 @@
   <md-button class="md-raised logoutBtn" ng-click="logout()">Logout</md-button>
 </div>
 
-<script>
-  $(function() {
-    $( ".dragme" ).draggable();
-  });
-</script>
-
 <!-- NAV BTNS -->
 <h2 class="roomTitle">{{roomName}} : </h2>
 <md-menu class="roomMenu" md-position-mode="target-right target">
@@ -52,7 +46,12 @@
 
 <div draggable class="frame linkFrame md-whiteframe-z4 dragme" ng-repeat="link in links" style="transform: translate({{link.left}}px,{{link.top}}px)">
   <iframe src="{{link.content}}" width="500px" height="400px" frameborder="0"></iframe>
-
+<!--
+  <script>
+    $(function() {
+      $( ".dragme" ).draggable();
+    });
+  </script> -->
 </div>
 
 <!-- <div class="frame youtubeFrame md-whiteframe-z4" ng-repeat="linkYT in links">
