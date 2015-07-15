@@ -60,6 +60,22 @@
 
         }); //END BIND
 
-      }]);
+      }])
+
+      .directive('draggable', function() {
+        return {
+
+          restrict:'A',
+
+          link: function(scope, element, attrs) {
+            element.draggable({
+              drag: function( event, ui ) {
+                scope.room.leftLink = ui.position.left;
+                console.log(scope.room);
+              }
+            });
+          }
+        };
+      });
 
 }());

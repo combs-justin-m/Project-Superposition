@@ -36,12 +36,12 @@
   <!-- <input type="text" ng-model="room.input.message" placeholder="Message"> -->
 
 
-<div class="frame linkFrame md-whiteframe-z4 dragme">
+<div draggable class="frame linkFrame md-whiteframe-z4 dragme">
   <iframe src="{{room.input.generalUrl}}" width="500px" height="400px" frameborder="0"></iframe>
   <input type="text" ng-model="room.input.generalUrl" placeholder="General URL">
 </div>
 
-<div class="frame youtubeFrame md-whiteframe-z4">
+<div draggable class="frame youtubeFrame md-whiteframe-z4">
   <iframe src="{{room.embedYT}}" width="500px" height="400px" frameborder="0"></iframe>
   <form ng-submit="embedify(room.input.yt)">
     <input type="text" ng-model="room.input.yt" placeholder="YOUTUBE">
