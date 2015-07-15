@@ -7,6 +7,23 @@
     .controller('roomController', [ '$scope', '$firebaseObject', '$http', 'Auth', 'Room', '$stateParams', '$state',
       function($scope, $firebaseObject, $http, Auth, Room, $stateParams, $state){
 
+        Auth.$onAuth(function(x){
+          $scope.authData = x;
+        });
+
+        $scope.roomName = $stateParams.roomId;
+
+        var authData = Auth.$getAuth();
+
+        var gitName = function() {
+          if (authData === null) {
+            return 'Guest';
+          } else {
+            return authData.github.username;
+          }
+        }
+
+        console.log(gitName());
 
         var firepadRef = new Firebase('https://radiant-heat-3085.firebaseio.com/');
 
@@ -29,7 +46,9 @@
 
         //// Create FirepadUserList (with our desired userId).
         var firepadUserList = FirepadUserList.fromDiv(firepadRef.child('users'),
-            document.getElementById('userlist'), userId);
+            document.getElementById('userlist'), userId
+            ,gitName()
+            );
 
         //// Initialize contents.
         firepad.on('ready', function() {
@@ -37,13 +56,6 @@
             firepad.setText('Check out the user list to the left!');
           }
         });
-
-
-        Auth.$onAuth(function(x){
-          $scope.authData = x;
-        });
-
-        $scope.roomName = $stateParams.roomId;
 
         Room($stateParams.roomId).$bindTo($scope, 'room').then(function () {
 

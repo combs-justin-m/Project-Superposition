@@ -12,7 +12,6 @@
 
         Auth.$onAuth(function(x){
           $scope.authData = x;
-          console.log(x);
         });
 
         $scope.login = function() {

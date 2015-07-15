@@ -38,12 +38,12 @@
           .state('roomKOTH', {
             url: '/room/kingofthehill/:roomId',
             templateUrl: 'js/room/roomKOTH.tpl.html',
-            controller: 'roomController',
-            resolve: {
-              "currentAuth": ["Auth", function(Auth) {
-                return Auth.$requireAuth();
-              }]
-            }
+            controller: 'roomController'
+            // resolve: {
+            //   "currentAuth": ["Auth", function(Auth) {
+            //     return Auth.$requireAuth();
+            //   }]
+            // }
           })
           .state('roomWB', {
             url: '/room/whiteboard/:roomId',
