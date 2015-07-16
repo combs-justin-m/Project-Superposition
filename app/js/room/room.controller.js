@@ -63,18 +63,24 @@
       }])
 
       .directive('draggable', function() {
-        return {
+
+          function link(scope, element, attrs) {
 
           restrict:'A',
 
-          link: function(scope, element, attrs) {
+
             element.draggable({
+
               drag: function( event, ui ) {
+
                 scope.room.leftLink = ui.position.left;
-                console.log(scope.room);
+                scope.room.topLink = ui.position.top;
+
               }
             });
           }
+        return {
+          link: link
         };
       });
 
