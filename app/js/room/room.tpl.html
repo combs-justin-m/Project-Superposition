@@ -1,0 +1,42 @@
+<div class="user md-whiteframe-z2" ng-show="authData">
+  <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
+  <p class="userName">{{authData.github.displayName}}</p>
+  <a href=""><md-button class="md-raised roomBtn" ng-click="goHome()">Home</md-button></a>
+  <md-button class="md-raised logoutBtn" ng-click="logout()">Logout</md-button>
+</div>
+
+<!-- NAV BTNS -->
+<h2 class="roomTitle">{{roomName}} : </h2>
+<md-menu class="roomMenu" md-position-mode="target-right target">
+  <md-button aria-label="Layout Menu" class="md-raised" ng-click="$mdOpenMenu()">
+    Room <i class="fa fa-caret-down" md-menu-origin></i>
+  </md-button>
+  <md-menu-content width="2">
+    <md-menu-item>
+      <md-button>
+        <a href="/#/room/roundrobin/{{room.$id}}" md-menu-align-target>Round Robin</a>
+      </md-button>
+    </md-menu-item>
+    <md-menu-item>
+      <md-button>
+        <a href="/#/room/freeforall/{{room.$id}}" md-menu-align-target>Free For All</a>
+      </md-button>
+    </md-menu-item>
+    <md-menu-item>
+      <md-button>
+        <a href="/#/room/whiteboard/{{room.$id}}" md-menu-align-target>Whiteboard</a>
+      </md-button>
+    </md-menu-item>
+  </md-menu-content>
+</md-menu>
+<md-button ng-click="addFrame()">
+  123
+</md-button>
+
+<div id="userlist"></div>
+<div id="firepad"></div>
+
+<div draggable class="frame linkFrame md-whiteframe-z4">
+  <iframe src="{{room.input.generalUrl}}" width="500px" height="400px" frameborder="0"></iframe>
+  <input type="text" ng-model="room.input.generalUrl" placeholder="General URL">
+</div>

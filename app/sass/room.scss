@@ -2,6 +2,19 @@ $youtube: #CC181E;
 $spotify: #2EBD59;
 $soundcloud: #FF5500;
 
+#userlist {
+  position: absolute; left: 0; top: 70px; bottom: 0; height: auto;
+  width: 175px; border-right: 1px solid lightgrey;
+}
+#firepad {
+  position: absolute; left: 175px; top: 70px; bottom: 0; right: 50%; height: auto;
+  border-left: 1px solid lightgrey;
+}
+
+.powered-by-firepad {
+  visibility: hidden;
+}
+
 .roomTitle {
   float: left;
 }
@@ -21,6 +34,7 @@ $soundcloud: #FF5500;
   width: 500px;
   height: 435px;
   margin: 30px auto;
+  float: right;
 
   input {
     display: block;

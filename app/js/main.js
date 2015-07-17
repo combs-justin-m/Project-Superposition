@@ -37,7 +37,7 @@
           })
           .state('room', {
             url: '/room/:roomId',
-            templateUrl: 'js/room/roomKOTH.tpl.html',
+            templateUrl: 'js/room/room.tpl.html',
             controller: 'roomController'
             // resolve: {
             //   "currentAuth": ["Auth", function(Auth) {

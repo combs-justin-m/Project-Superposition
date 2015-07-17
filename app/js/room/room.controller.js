@@ -117,7 +117,31 @@
           $scope.room = Room(data.github.username);
         };
 
-      }])
 
+        firepad.registerEntity('a', { attrs: { HREF: 'h', INNER_HTML: 'i' },
+        render: function (info) {
+          var attrs = this.attrs;
+          var href = info && info[attrs.HREF] || '';
+          var innerHTML = info && info[attrs.INNER_HTML] || '';
+          var link = document.createElement('a');
+              link.setAttribute('href', href);
+              link.innerHTML = innerHTML;
+              return link;
+              },
+        fromElement: function (element) {
+          var attrs = this.attrs;
+          var info = {};
+          info[attrs.HREF] = element.hasAttribute('href') ? element.getAttribute('href') : '';
+          info[attrs.INNER_HTML] = element.innerHTML || ''; return info; }
+          });
+
+        $scope.addFrame = function() {
+          firepad.insertEntity('a', { h: 'http://fontawesome.io/', i: 'http://fontawesome.io/', width: 200, height: 200 })
+          console.log('add frame');
+        };
+
+
+
+      }])
 
 }());
