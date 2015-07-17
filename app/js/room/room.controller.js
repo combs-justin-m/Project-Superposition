@@ -25,7 +25,7 @@
 
         console.log(gitName());
 
-        var firepadRef = new Firebase('https://radiant-heat-3085.firebaseio.com/');
+        var firepadRef = new Firebase('https://radiant-heat-3085.firebaseio.com/room/' + $stateParams.roomId + "/pad");
 
         //// Create CodeMirror (with lineWrapping on).
         var codeMirror = CodeMirror(document.getElementById('firepad'), {
@@ -96,6 +96,26 @@
 
         }); //END BIND
 
+        Auth.$onAuth(function(x){
+          $scope.authData = x;
+        });
+
+        $scope.login = function() {
+          Auth.$authWithOAuthPopup('github')
+            .catch(function(error){
+              console.error(error);
+          });
+
+        };
+
+        $scope.logout = function() {
+          Auth.$unauth();
+        };
+
+        $scope.createRoom = function() {
+          var data = Auth.$getAuth();
+          $scope.room = Room(data.github.username);
+        };
 
       }])
 

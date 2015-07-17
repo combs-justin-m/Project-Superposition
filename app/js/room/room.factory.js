@@ -4,15 +4,26 @@
 
    angular.module('app')
 
+    .factory("Home", ['$firebaseObject',
+      function($firebaseObject) {
+
+        return function() {
+          // var randomRoomId = Math.round(Math.random() * 100000000);
+          var ref = new Firebase("https://radiant-heat-3085.firebaseio.com/");
+          // var roomRef = ref.child();
+
+          return $firebaseObject(ref);
+      };
+    }])
     .factory("Room", ['$firebaseObject',
       function($firebaseObject) {
 
-        return function(username) {
+        return function(param) {
           // var randomRoomId = Math.round(Math.random() * 100000000);
-          var ref = new Firebase("https://radiant-heat-3085.firebaseio.com/room/");
-          var roomRef = ref.child(username);
+          var ref = new Firebase("https://radiant-heat-3085.firebaseio.com/room/" + param);
+          // var roomRef = ref.child();
 
-          return $firebaseObject(roomRef);
+          return $firebaseObject(ref);
       };
     }])
     .factory("roomWB", ["$firebaseArray",

@@ -11,7 +11,7 @@
 
         $stateProvider
           .state('app', {
-            url: '',
+            url: '/',
             templateUrl: 'js/home/home.tpl.html',
             controller: 'appController'
           })
@@ -35,8 +35,8 @@
               }]
             }
           })
-          .state('roomKOTH', {
-            url: '/room/kingofthehill/:roomId',
+          .state('room', {
+            url: '/room/:roomId',
             templateUrl: 'js/room/roomKOTH.tpl.html',
             controller: 'roomController'
             // resolve: {

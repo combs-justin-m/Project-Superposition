@@ -36,11 +36,11 @@
     /* Height / width / positioning can be customized for your use case.
        For demo purposes, we make the user list 175px and firepad fill the rest of the page. */
     #userlist {
-      position: absolute; left: 0; top: 50px; bottom: 0; height: auto;
+      position: absolute; left: 0; top: 450px; bottom: 0; height: auto;
       width: 175px; border-right: 1px solid lightgrey;
     }
     #firepad {
-      position: absolute; left: 175px; top: 50px; bottom: 0; right: 0; height: auto;
+      position: absolute; left: 175px; top: 450px; bottom: 0; right: 0; height: auto;
       border-left: 1px solid lightgrey;
     }
 
@@ -51,3 +51,8 @@
 
   <div id="userlist"></div>
   <div id="firepad"></div>
+
+  <div draggable class="frame linkFrame md-whiteframe-z4">
+    <iframe src="{{room.input.generalUrl}}" width="500px" height="400px" frameborder="0"></iframe>
+    <input type="text" ng-model="room.input.generalUrl" placeholder="General URL">
+  </div>
