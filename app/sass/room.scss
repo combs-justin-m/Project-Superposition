@@ -3,7 +3,7 @@ $spotify: #2EBD59;
 $soundcloud: #FF5500;
 
 #userlist {
-  position: absolute; left: 0; top: 70px; bottom: 0; height: auto;
+  position: absolute; left: 0; top: 0; bottom: 0; height: auto;
   width: 175px; border-right: 1px solid lightgrey;
 }
 #firepad {
@@ -11,12 +11,20 @@ $soundcloud: #FF5500;
   border-left: 1px solid lightgrey;
 }
 
+.firepad-userlist {
+  padding-top: 186px;
+}
+
+.firepad-userlist-users {
+  top: 223px !important;
+}
+
 .powered-by-firepad {
   visibility: hidden;
 }
 
 .roomTitle {
-  float: left;
+  margin-left: 15px;
 }
 
 .roomMenu {
@@ -85,4 +93,9 @@ $soundcloud: #FF5500;
 
 .linkIcon {
   margin-top: 14px;
+}
+
+.userBtn {
+  float: left;
+  z-index: 10;
 }

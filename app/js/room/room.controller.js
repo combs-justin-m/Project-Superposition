@@ -23,6 +23,8 @@
           }
         }
 
+        // var gitImg = authData.github.cachedUserProfile.avatar_url;
+
         console.log(gitName());
 
         var firepadRef = new Firebase('https://radiant-heat-3085.firebaseio.com/room/' + $stateParams.roomId + "/pad");
@@ -83,15 +85,6 @@
             {auto_play: true},  document.getElementById("SoundCloud"));
 
             $scope.room.embedCloud = link;
-          };
-
-          $scope.goHome = function() {
-            $state.go('app');
-          };
-
-          $scope.logout = function() {
-            Auth.$unauth();
-            $state.go('app');
           };
 
         }); //END BIND
@@ -160,9 +153,27 @@
           }
         });
 
-        $scope.addFrame = function() {
-          firepad.insertEntity('iframe', { src: 'https://www.youtube.com/embed/Ge5giteZxto?autoplay=1', width: 400, height: 400 })
+        $scope.addFrame = function(url) {
+          firepad.insertEntity('iframe', { src: url, width: 400, height: 400 })
+
+          $scope.link = '';
+        };
+
+        $scope.addYoutube = function(link) {
+
+          var youtubeLinkPattern = /^http(s?):\/\/www\.youtu(\.be|be\.com)\/watch\?v=([-_a-zA-z0-9]+)$/;
+
+          var match = youtubeLinkPattern.exec(link);
+          if (match) {
+            $scope.linkYT = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
+          } else {
+            $scope.linkYT = '';
+          }
+
+          firepad.insertEntity('iframe', { src: $scope.linkYT, width: 400, height: 400 })
           console.log('add frame');
+
+          $scope.YT = '';
         };
 
 
