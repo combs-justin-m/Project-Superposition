@@ -121,4 +121,8 @@ a {
   color: #1F1F1F; }
 
 a:visited {
-  color: #1F1F1F; }
+  color: #1F1F1F;
+  outline: none; }
+
+a:focus {
+  outline: none; }
