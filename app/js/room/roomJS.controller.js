@@ -4,7 +4,7 @@
 
   angular.module('app')
 
-    .controller('roomController', [ '$scope', '$firebaseObject', '$http', 'Auth', 'Room', '$stateParams', '$state', '$mdToast',
+    .controller('roomJSController', [ '$scope', '$firebaseObject', '$http', 'Auth', 'Room', '$stateParams', '$state', '$mdToast',
       function($scope, $firebaseObject, $http, Auth, Room, $stateParams, $state, $mdToast){
 
         $scope.href = window.location.href;
@@ -13,6 +13,7 @@
 
         cutTextareaBtn.addEventListener('click', function(event) {
           var cutTextarea = document.querySelector('.js-cuttextarea');
+          console.log(cutTextarea);
           cutTextarea.select();
 
           try {
@@ -34,7 +35,6 @@
             .filter(function(pos) { return $scope.toastPosition[pos]; })
             .join(' ');
         };
-
 
         $scope.showCopy = function() {
           $mdToast.show(
@@ -65,7 +65,8 @@
 
         //// Create CodeMirror (with lineWrapping on).
         var codeMirror = CodeMirror(document.getElementById('firepad'), {
-          mode: '',
+          mode: 'javascript',
+          lineNumbers: true,
           lineWrapping: true
           });
 
@@ -75,7 +76,7 @@
         //// Create Firepad (with rich text features and our desired userId).
         var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
           richTextToolbar: true,
-          richTextShortcuts: true,
+          richTextShortcuts: false,
           userId: userId
           });
 
@@ -88,7 +89,7 @@
         //// Initialize contents.
         firepad.on('ready', function() {
           if (firepad.isHistoryEmpty()) {
-            firepad.setText('Copy room URL, share with friends directly, or Tweet for everyone to join in.');
+            firepad.setText('//Collaborate, edit and problem solve all the JavaScripts');
           }
         });
 
@@ -106,83 +107,6 @@
 
         $scope.logout = function() {
           Auth.$unauth();
-        };
-
-        $scope.createRoom = function() {
-          var data = Auth.$getAuth();
-          $scope.room = Room(data.github.username);
-        };
-
-
-        firepad.registerEntity('a', { attrs: { HREF: 'h', INNER_HTML: 'i' },
-          render: function (info) {
-            var attrs = this.attrs;
-            var href = info && info[attrs.HREF] || '';
-            var innerHTML = info && info[attrs.INNER_HTML] || '';
-            var link = document.createElement('a');
-                link.setAttribute('href', href);
-                link.innerHTML = innerHTML;
-                return link;
-                },
-          fromElement: function (element) {
-            var attrs = this.attrs;
-            var info = {};
-            info[attrs.HREF] = element.hasAttribute('href') ? element.getAttribute('href') : '';
-            info[attrs.INNER_HTML] = element.innerHTML || ''; return info; }
-          });
-
-        firepad.registerEntity('iframe', {
-          render: function(info) {
-            var attrs = ['src', 'alt', 'width', 'height', 'style', 'class', 'frameborder'];
-            var html = '<iframe ';
-            for(var i = 0; i < attrs.length; i++) {
-              var attr = attrs[i];
-              if (attr in info) {
-                html += ' ' + attr + '="' + info[attr] + '"';
-              }
-            }
-            html += "></iframe>";
-            return html;
-          },
-          fromElement: function(element) {
-            var info = {};
-            for(var i = 0; i < attrs.length; i++) {
-              var attr = attrs[i];
-              if (element.hasAttribute(attr)) {
-                info[attr] = element.getAttribute(attr);
-              }
-            }
-            return info;
-          }
-        });
-
-        $scope.addFrame = function(url) {
-          firepad.insertEntity('iframe', { src: url, width: 400, height: 400 })
-
-          $scope.link = '';
-        };
-
-        $scope.addYoutube = function(link) {
-
-          var youtubeLinkPattern = /^http(s?):\/\/www\.youtu(\.be|be\.com)\/watch\?v=([-_a-zA-z0-9]+)$/;
-
-          var match = youtubeLinkPattern.exec(link);
-          if (match) {
-            $scope.linkYT = 'https://www.youtube.com/embed/' + match[3] + '?autoplay=1';
-          } else {
-            $scope.linkYT = '';
-          }
-
-          firepad.insertEntity('iframe', { src: $scope.linkYT, width: 400, height: 400 })
-
-          $scope.YT = '';
-        };
-
-        $scope.addSpotify = function(link) {
-
-          firepad.insertEntity('iframe', { src: 'https://embed.spotify.com/?uri=' + link, width: 318, height: 400, frameborder:0 })
-
-          $scope.spot = '';
         };
 
       }])

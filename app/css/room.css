@@ -85,6 +85,9 @@
   display: block !important;
   margin: 0 10px !important; }
 
+.userForm {
+  float: left; }
+
 .js-cuttextarea {
   display: inline-block;
   width: 300px; }

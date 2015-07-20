@@ -15,45 +15,15 @@
             templateUrl: 'js/home/home.tpl.html',
             controller: 'appController'
           })
-          .state('roomRR', {
-            url: '/room/roundrobin/:roomId',
-            templateUrl: 'js/room/roomRR.tpl.html',
-            controller: 'roomController',
-            resolve: {
-              "currentAuth": ["Auth", function(Auth) {
-                return Auth.$requireAuth();
-              }]
-            }
-          })
-          .state('roomFFA', {
-            url: '/room/freeforall/:roomId',
-            templateUrl: 'js/room/roomFFA.tpl.html',
-            controller: 'roomController',
-            resolve: {
-              "currentAuth": ["Auth", function(Auth) {
-                return Auth.$requireAuth();
-              }]
-            }
-          })
           .state('room', {
             url: '/room/:roomId',
             templateUrl: 'js/room/room.tpl.html',
             controller: 'roomController'
-            // resolve: {
-            //   "currentAuth": ["Auth", function(Auth) {
-            //     return Auth.$requireAuth();
-            //   }]
-            // }
           })
-          .state('roomWB', {
-            url: '/room/whiteboard/:roomId',
-            templateUrl: 'js/room/roomWB.tpl.html',
-            controller: 'roomWBController',
-            resolve: {
-              "currentAuth": ["Auth", function(Auth) {
-                return Auth.$requireAuth();
-              }]
-            }
+          .state('roomJS', {
+            url: '/room/js/:roomId',
+            templateUrl: 'js/room/roomJS.tpl.html',
+            controller: 'roomJSController'
           });
 
         // Completely disable SCE.  For demonstration purposes only!

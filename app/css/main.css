@@ -40,6 +40,17 @@ section {
   clear: both;
   text-align: center; }
 
+md-menu-content {
+  padding: 0; }
+
+md-open-menu-container {
+  top: 55px !important; }
+
+.menuBtn {
+  width: 100%;
+  margin: 0;
+  padding: 7px; }
+
 #userlist {
   position: fixed;
   left: 0;
@@ -127,6 +138,9 @@ section {
   display: block !important;
   margin: 0 10px !important; }
 
+.userForm {
+  float: left; }
+
 .js-cuttextarea {
   display: inline-block;
   width: 300px; }
@@ -137,6 +151,7 @@ section {
 
 a {
   text-decoration: none;
+  padding: 0;
   color: #1F1F1F; }
 
 a:visited {

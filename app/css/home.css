@@ -28,3 +28,14 @@
 section {
   clear: both;
   text-align: center; }
+
+md-menu-content {
+  padding: 0; }
+
+md-open-menu-container {
+  top: 55px !important; }
+
+.menuBtn {
+  width: 100%;
+  margin: 0;
+  padding: 7px; }

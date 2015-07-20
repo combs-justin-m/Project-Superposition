@@ -107,9 +107,12 @@ $darkgray: #c9c9c9;
 }
 
 .user-group {
-  // float: left;
   display: block !important;
   margin: 0 10px !important;
+}
+
+.userForm {
+  float: left;
 }
 
 .js-cuttextarea {

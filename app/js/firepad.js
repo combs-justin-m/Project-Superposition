@@ -1745,10 +1745,6 @@ firepad.RichTextToolbar = (function(global) {
       utils.elt('div', [self.makeButton_('undo'), self.makeButton_('redo')], { 'class': 'firepad-btn-group'})
     ];
 
-    if (self.imageInsertionUI) {
-      toolbarOptions.push(utils.elt('div', [self.makeButton_('insert-image')], { 'class': 'firepad-btn-group' }));
-    }
-
     var toolbarWrapper = utils.elt('div', toolbarOptions, { 'class': 'firepad-toolbar-wrapper' });
     var toolbar = utils.elt('div', null, { 'class': 'firepad-toolbar' });
     toolbar.appendChild(toolbarWrapper)

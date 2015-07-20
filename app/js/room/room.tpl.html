@@ -8,7 +8,6 @@
 <div class="user" ng-show="authData">
   <!-- <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
   <p class="userName">{{authData.github.displayName}}</p> -->
-  <md-button class="logoutBtn" ng-click="logout()">Logout</md-button>
   <a href="#"><md-button class="roomBtn">Home</md-button></a>
 </div>
 
@@ -24,39 +23,44 @@
   <div class="wraps">
 
 
-  <h2 class="roomTitle">pug room: </h2><input type="text" class="js-cuttextarea" value="http://localhost:8000/#/room/{{roomName}}"></input>
+  <h2 class="roomTitle">pug room: </h2><input type="text" class="js-cuttextarea" value="{{href}}"></input>
 
   <button class="js-textareacutbtn" ng-click="showCopy()">
     <i class="fa fa-clipboard"></i>
-    <md-tooltip>
-        Copy to clipboard
-    </md-tooltip>
-    </button>
+    <md-tooltip>Copy to clipboard</md-tooltip>
+  </button>
+
+  <button>
+    <i class="fa fa-twitter"></i>
+  </button>
 
   <div class="firepad-btn-group user-group">
     <a class="firepad-btn" ng-click="showLink = !showLink">
       <i class="fa fa-link"></i>
+    <md-tooltip>Link</md-tooltip>
     </a>
 
     <a class="firepad-btn" ng-click="showYT = !showYT">
-      <i class="fa fa-youtube"></i>
+      <i class="fa fa-youtube-play"></i>
+    <md-tooltip>YouTube</md-tooltip>
     </a>
 
     <a class="firepad-btn" ng-click="showSpot = !showSpot">
       <i class="fa fa-spotify"></i>
+      <md-tooltip>Spotify</md-tooltip>
     </a>
   </div>
 
-  <form ng-submit="addFrame(link)">
+  <form class="userForm" ng-submit="addFrame(link)">
     <input type="text"  placeholder="URL Link to site" ng-show="showLink" ng-model="link">
   </form>
 
 
-  <form ng-submit="addYoutube(YT)">
+  <form class="userForm" ng-submit="addYoutube(YT)">
     <input type="text"  placeholder="URL of YT video" ng-show="showYT" ng-model="YT">
   </form>
 
-  <form ng-submit="addSpotify(spot)">
+  <form class="userForm" ng-submit="addSpotify(spot)">
     <input type="text"  placeholder="Spotify URI link" ng-show="showSpot" ng-model="spot">
   </form>
   </div>

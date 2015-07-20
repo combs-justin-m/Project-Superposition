@@ -1,12 +1,4 @@
 
-<!-- LOGOUT BUTTON -->
-<!-- <div class="user" ng-show="authData">
-  <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
-  <p class="userName">{{authData.github.displayName}}</p>
-  <a href="/#/room"><md-button class="md-raised roomBtn" ng-click="createRoom()">My Room</md-button></a>
-  <md-button class="md-raised logoutBtn" ng-click="logout()">Logout</md-button>
-</div> -->
-
 <!-- LOGIN BUTTON -->
 <div class="homeContainer">
   <nav>
@@ -14,18 +6,30 @@
       <h2>Pug</h2>
     </div>
 
-    <div class="user" ng-hide="authData">
-      <!-- <img ng-src="https://www.clever-cloud.com/assets/img/github-icon.svg"> -->
-      <md-button ng-click="login()">Log in</md-button>
-      <a href="/#/room/{{roomNum}}"><md-button class="roomBtn" ng-click="createRoom()">New Room</md-button></a>
-    </div>
 
 
-    <div class="user" ng-show="authData">
-      <!-- <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
-      <p class="userName">{{authData.github.username}}</p> -->
-      <md-button class="logoutBtn" ng-click="logout()">Logout</md-button>
-      <a href="/#/room/{{roomNum}}"><md-button class="roomBtn" ng-click="createRoom()">New Room</md-button></a>
+
+    <div class="user">
+
+      <md-button ng-hide="authData" ng-click="login()">Log in</md-button>
+      <md-button ng-show="authData" class="logoutBtn" ng-click="logout()">Logout</md-button>
+
+
+      <md-menu md-position-mode="target-right target">
+         <md-button class="roomBtn" ng-click="$mdOpenMenu()">
+           New Room <i class="fa fa-caret-down"></i>
+         </md-button>
+
+         <md-menu-content width="2">
+           <md-menu-item>
+             <a href="/#/room/{{roomNum}}"><md-button class="menuBtn">Text</md-button></a>
+           </md-menu-item>
+           <md-menu-item>
+             <a href="/#/room/js/{{roomNum}}"><md-button class="menuBtn">JavaScript</md-button></a>
+           </md-menu-item>
+         </md-menu-content>
+       </md-menu>
+
     </div>
   </nav>
 
@@ -37,8 +41,4 @@
     </h4>
   </section>
 
-  <div class="padWrapper">
-    <!-- <div id="userlist"></div> -->
-    <div id="firepad"></div>
-  </div>
 </div>
