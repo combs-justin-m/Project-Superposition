@@ -21,9 +21,9 @@
 
 <div id="userlist"></div>
 <div id="firepad">
-  <h2 class="roomTitle">pug room: <input type="text" class="js-cuttextarea" value="http://localhost:8000/#/room/{{roomName}}"></input></h2>
+  <h2 class="roomTitle">pug room: </h2><input type="text" class="js-cuttextarea" value="http://localhost:8000/#/room/{{roomName}}"></input>
 
-  <button class="js-textareacutbtn"><i class="fa fa-clipboard"></i></button>
+  <button class="js-textareacutbtn" ng-click="showCopy()"><i class="fa fa-clipboard"></i></button>
 
   <div class="firepad-btn-group user-group">
     <a class="firepad-btn" ng-click="showLink = !showLink">

@@ -4,8 +4,8 @@
 
   angular.module('app')
 
-    .controller('roomController', [ '$scope', '$firebaseObject', '$http', 'Auth', 'Room', '$stateParams', '$state',
-      function($scope, $firebaseObject, $http, Auth, Room, $stateParams, $state){
+    .controller('roomController', [ '$scope', '$firebaseObject', '$http', 'Auth', 'Room', '$stateParams', '$state', '$mdToast',
+      function($scope, $firebaseObject, $http, Auth, Room, $stateParams, $state, $mdToast){
 
         var cutTextareaBtn = document.querySelector('.js-textareacutbtn');
 
@@ -21,6 +21,28 @@
           }
         });
 
+        $scope.toastPosition = {
+          bottom: false,
+          top: true,
+          left: false,
+          right: true
+        };
+
+        $scope.getToastPosition = function() {
+          return Object.keys($scope.toastPosition)
+            .filter(function(pos) { return $scope.toastPosition[pos]; })
+            .join(' ');
+        };
+
+
+        $scope.showCopy = function() {
+          $mdToast.show(
+            $mdToast.simple()
+              .content('Copied to clipboard!')
+              .position($scope.getToastPosition())
+              .hideDelay(3000)
+          );
+        };
 
         Auth.$onAuth(function(x){
           $scope.authData = x;
