@@ -43,10 +43,10 @@
           });
 
         //// Create FirepadUserList (with our desired userId).
-        var firepadUserList = FirepadUserList.fromDiv(firepadRef.child('users'),
-            document.getElementById('userlist'), userId
-            ,gitName()
-            );
+        // var firepadUserList = FirepadUserList.fromDiv(firepadRef.child('users'),
+        //     document.getElementById('userlist'), userId
+        //     ,gitName()
+        //     );
 
         //// Initialize contents.
         firepad.on('ready', function() {

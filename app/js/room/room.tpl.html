@@ -1,15 +1,15 @@
 
 <div class="user" ng-hide="authData">
   <!-- <img ng-src="https://www.clever-cloud.com/assets/img/github-icon.svg"> -->
-  <a href="#"><md-button class="roomBtn">Home</md-button></a>
   <md-button ng-click="login()">Log in</md-button>
+  <a href="#"><md-button class="roomBtn">Home</md-button></a>
 </div>
 
 <div class="user" ng-show="authData">
   <!-- <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
   <p class="userName">{{authData.github.displayName}}</p> -->
-  <a href="#"><md-button class="roomBtn">Home</md-button></a>
   <md-button class="logoutBtn" ng-click="logout()">Logout</md-button>
+  <a href="#"><md-button class="roomBtn">Home</md-button></a>
 </div>
 
 
@@ -23,7 +23,7 @@
 <div id="firepad">
   <h2 class="roomTitle">pug room: {{roomName}}</h2>
 
-  <div class="firepad-btn-group">
+  <div class="firepad-btn-group user-group">
     <a class="firepad-btn" ng-click="showLink = !showLink">
       <i class="fa fa-link"></i>
     </a>
@@ -41,3 +41,4 @@
   <form ng-submit="addYoutube(YT)">
     <input type="text"  placeholder="URL of YT video" ng-show="showYT" ng-model="YT">
   </form>
+</div>

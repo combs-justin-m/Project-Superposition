@@ -16,16 +16,16 @@
 
     <div class="user" ng-hide="authData">
       <!-- <img ng-src="https://www.clever-cloud.com/assets/img/github-icon.svg"> -->
-      <a href="/#/room/{{roomNum}}"><md-button class="roomBtn" ng-click="createRoom()">New Room</md-button></a>
       <md-button ng-click="login()">Log in</md-button>
+      <a href="/#/room/{{roomNum}}"><md-button class="roomBtn" ng-click="createRoom()">New Room</md-button></a>
     </div>
 
 
     <div class="user" ng-show="authData">
       <!-- <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
       <p class="userName">{{authData.github.username}}</p> -->
-      <a href="/#/room/{{roomNum}}"><md-button class="roomBtn" ng-click="createRoom()">New Room</md-button></a>
       <md-button class="logoutBtn" ng-click="logout()">Logout</md-button>
+      <a href="/#/room/{{roomNum}}"><md-button class="roomBtn" ng-click="createRoom()">New Room</md-button></a>
     </div>
   </nav>
 
@@ -38,7 +38,7 @@
   </section>
 
   <div class="padWrapper">
-    <div id="userlist"></div>
+    <!-- <div id="userlist"></div> -->
     <div id="firepad"></div>
   </div>
 </div>

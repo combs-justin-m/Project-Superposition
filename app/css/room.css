@@ -1,11 +1,11 @@
 #userlist {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  bottom: 0;
-  height: auto;
+  height: 100vh;
   width: 175px;
-  border-right: 1px solid lightgrey; }
+  border-right: 1px solid lightgrey;
+  background-color: #283246; }
 
 #firepad {
   position: absolute;
@@ -15,6 +15,16 @@
   right: 0;
   height: auto;
   border-left: 1px solid lightgrey; }
+
+.firepad-userlist-heading {
+  color: white; }
+
+.firepad-userlist-name {
+  color: #c9c9c9; }
+
+.firepad-userlist-name-input {
+  color: #c9c9c9;
+  background-color: #283246; }
 
 .powered-by-firepad {
   visibility: hidden; }
@@ -70,6 +80,6 @@
 .linkIcon {
   margin-top: 14px; }
 
-.userBtn {
+.user-group {
   float: left;
-  z-index: 10; }
+  margin: 25px 15px 0 !important; }
