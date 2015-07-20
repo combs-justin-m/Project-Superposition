@@ -22,45 +22,47 @@
 <div id="firepad"></div>
   <div class="wraps">
 
+    <h2 class="roomTitle">pug room: </h2><input type="text" class="js-cuttextarea" value="{{href}}"></input>
 
-  <h2 class="roomTitle">pug room: </h2><input type="text" class="js-cuttextarea" value="{{href}}"></input>
+    <button class="js-textareacutbtn" ng-click="showCopy()">
+      <i class="fa fa-clipboard"></i>
+      <md-tooltip>Copy to clipboard</md-tooltip>
+    </button>
 
-  <button class="js-textareacutbtn" ng-click="showCopy()">
-    <i class="fa fa-clipboard"></i>
-    <md-tooltip>Copy to clipboard</md-tooltip>
-  </button>
-
-  <button>
-    <i class="fa fa-twitter"></i>
-  </button>
-
-  <div class="firepad-btn-group user-group">
-    <a class="firepad-btn" ng-click="showLink = !showLink">
-      <i class="fa fa-link"></i>
-    <md-tooltip>Link</md-tooltip>
+    <a href="http://twitter.com/home?status=Join%20my%20room%20with%20this%20link%20@pug%20https%3A%2F%2Fradiant-heat-3085.firebaseio.com%2F%23%2Froom%2F{{roomNum}}" target="_blank">
+      <button>
+        <i class="fa fa-twitter"></i>
+      </button>
     </a>
 
-    <a class="firepad-btn" ng-click="showYT = !showYT">
-      <i class="fa fa-youtube-play"></i>
-    <md-tooltip>YouTube</md-tooltip>
-    </a>
+    <div class="firepad-btn-group user-group">
+      <a class="firepad-btn" ng-click="showLink = !showLink">
+        <i class="fa fa-link"></i>
+      <md-tooltip>Link</md-tooltip>
+      </a>
 
-    <a class="firepad-btn" ng-click="showSpot = !showSpot">
-      <i class="fa fa-spotify"></i>
-      <md-tooltip>Spotify</md-tooltip>
-    </a>
-  </div>
+      <a class="firepad-btn" ng-click="showYT = !showYT">
+        <i class="fa fa-youtube-play"></i>
+      <md-tooltip>YouTube</md-tooltip>
+      </a>
 
-  <form class="userForm" ng-submit="addFrame(link)">
-    <input type="text"  placeholder="URL Link to site" ng-show="showLink" ng-model="link">
-  </form>
+      <a class="firepad-btn" ng-click="showSpot = !showSpot">
+        <i class="fa fa-spotify"></i>
+        <md-tooltip>Spotify</md-tooltip>
+      </a>
 
 
-  <form class="userForm" ng-submit="addYoutube(YT)">
-    <input type="text"  placeholder="URL of YT video" ng-show="showYT" ng-model="YT">
-  </form>
+      <form class="userForm" ng-submit="addFrame(link)">
+        <input type="text"  placeholder="URL Link to site" ng-show="showLink" ng-model="link">
+      </form>
 
-  <form class="userForm" ng-submit="addSpotify(spot)">
-    <input type="text"  placeholder="Spotify URI link" ng-show="showSpot" ng-model="spot">
-  </form>
-  </div>
+
+      <form class="userForm" ng-submit="addYoutube(YT)">
+        <input type="text"  placeholder="URL of YT video" ng-show="showYT" ng-model="YT">
+      </form>
+
+      <form class="userForm" ng-submit="addSpotify(spot)">
+        <input type="text"  placeholder="Spotify URI link" ng-show="showSpot" ng-model="spot">
+      </form>
+    </div>
+</div>

@@ -8,6 +8,7 @@
       function($scope, $firebaseObject, $http, Auth, Room, $stateParams, $state, $mdToast){
 
         $scope.href = window.location.href;
+        $scope.roomNum = $stateParams.roomId;
 
         var cutTextareaBtn = document.querySelector('.js-textareacutbtn');
 

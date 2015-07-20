@@ -8,6 +8,7 @@
       function($scope, $firebaseObject, $http, Auth, Room, $stateParams, $state, $mdToast){
 
         $scope.href = window.location.href;
+        $scope.roomNum = $stateParams.roomId;
 
         var cutTextareaBtn = document.querySelector('.js-textareacutbtn');
 
@@ -48,8 +49,6 @@
         Auth.$onAuth(function(x){
           $scope.authData = x;
         });
-
-        $scope.roomName = $stateParams.roomId;
 
         var authData = Auth.$getAuth();
 
@@ -160,6 +159,7 @@
           firepad.insertEntity('iframe', { src: url, width: 400, height: 400 })
 
           $scope.link = '';
+          $scope.showLink = false;
         };
 
         $scope.addYoutube = function(link) {
@@ -176,6 +176,7 @@
           firepad.insertEntity('iframe', { src: $scope.linkYT, width: 400, height: 400 })
 
           $scope.YT = '';
+          $scope.showYT = false;
         };
 
         $scope.addSpotify = function(link) {
@@ -183,6 +184,7 @@
           firepad.insertEntity('iframe', { src: 'https://embed.spotify.com/?uri=' + link, width: 318, height: 400, frameborder:0 })
 
           $scope.spot = '';
+          $scope.showSpot = false;
         };
 
       }])
