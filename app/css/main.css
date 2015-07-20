@@ -72,7 +72,8 @@ section {
   visibility: hidden; }
 
 .roomTitle {
-  margin-left: 15px; }
+  margin-left: 15px;
+  display: inline-block; }
 
 .roomMenu {
   float: left; }
@@ -123,7 +124,16 @@ section {
   margin-top: 14px; }
 
 .user-group {
+  display: block !important;
   margin: 0 10px !important; }
+
+.js-cuttextarea {
+  display: inline-block;
+  width: 300px; }
+
+.wraps {
+  position: fixed;
+  left: 177px; }
 
 a {
   text-decoration: none;

@@ -162,7 +162,7 @@
 
         firepad.registerEntity('iframe', {
           render: function(info) {
-            var attrs = ['src', 'alt', 'width', 'height', 'style', 'class'];
+            var attrs = ['src', 'alt', 'width', 'height', 'style', 'class', 'frameborder'];
             var html = '<iframe ';
             for(var i = 0; i < attrs.length; i++) {
               var attr = attrs[i];
@@ -210,7 +210,7 @@
 
         $scope.addSpotify = function(link) {
 
-          firepad.insertEntity('iframe', { src: 'https://embed.spotify.com/?uri=' + link, width: 318, height: 400 })
+          firepad.insertEntity('iframe', { src: 'https://embed.spotify.com/?uri=' + link, width: 318, height: 400, frameborder:0 })
 
           $scope.spot = '';
         };

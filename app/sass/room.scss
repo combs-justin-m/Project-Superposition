@@ -35,6 +35,7 @@ $darkgray: #c9c9c9;
 
 .roomTitle {
   margin-left: 15px;
+  display: inline-block;
 }
 
 .roomMenu {
@@ -107,6 +108,16 @@ $darkgray: #c9c9c9;
 
 .user-group {
   // float: left;
+  display: block !important;
   margin: 0 10px !important;
+}
 
+.js-cuttextarea {
+  display: inline-block;
+  width: 300px;
+}
+
+.wraps {
+  position: fixed;
+  left: 177px;
 }
