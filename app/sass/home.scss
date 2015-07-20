@@ -1,11 +1,13 @@
+.homeContainer {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .user {
   position: absolute;
-  left: 15px;
-  top: 15px;
-  width: 100px;
-  padding-top: 30px;
+  right: 15px;
   text-align: center;
-  border: 1px solid lightgrey;
   padding: 15px;
   background-color: white;
   z-index: 10;
@@ -14,4 +16,21 @@
 .profilePic {
   height: 80px;
   width: 80px;
+}
+
+.logo {
+  float: left;
+}
+
+.padWrapper {
+  position: relative;
+  border: 1px solid lightgrey;
+  margin: 60px auto 0;
+  width: 800px;
+  height: 600px;
+}
+
+section {
+  clear: both;
+  text-align: center;
 }

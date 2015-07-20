@@ -11,7 +11,7 @@
 
         $stateProvider
           .state('app', {
-            url: '/',
+            url: '',
             templateUrl: 'js/home/home.tpl.html',
             controller: 'appController'
           })
