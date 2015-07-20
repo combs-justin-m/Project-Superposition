@@ -21,7 +21,9 @@
 
 <div id="userlist"></div>
 <div id="firepad">
-  <h2 class="roomTitle">pug room: {{roomName}}</h2>
+  <h2 class="roomTitle">pug room: <input type="text" class="js-cuttextarea" value="http://localhost:8000/#/room/{{roomName}}"></input></h2>
+
+  <button class="js-textareacutbtn"><i class="fa fa-clipboard"></i></button>
 
   <div class="firepad-btn-group user-group">
     <a class="firepad-btn" ng-click="showLink = !showLink">
@@ -30,6 +32,10 @@
 
     <a class="firepad-btn" ng-click="showYT = !showYT">
       <i class="fa fa-youtube"></i>
+    </a>
+
+    <a class="firepad-btn" ng-click="showSpot = !showSpot">
+      <i class="fa fa-spotify"></i>
     </a>
   </div>
 
@@ -40,5 +46,9 @@
 
   <form ng-submit="addYoutube(YT)">
     <input type="text"  placeholder="URL of YT video" ng-show="showYT" ng-model="YT">
+  </form>
+
+  <form ng-submit="addSpotify(spot)">
+    <input type="text"  placeholder="Spotify URI link" ng-show="showSpot" ng-model="spot">
   </form>
 </div>

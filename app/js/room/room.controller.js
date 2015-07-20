@@ -7,6 +7,21 @@
     .controller('roomController', [ '$scope', '$firebaseObject', '$http', 'Auth', 'Room', '$stateParams', '$state',
       function($scope, $firebaseObject, $http, Auth, Room, $stateParams, $state){
 
+        var cutTextareaBtn = document.querySelector('.js-textareacutbtn');
+
+        cutTextareaBtn.addEventListener('click', function(event) {
+          var cutTextarea = document.querySelector('.js-cuttextarea');
+          console.log(cutTextarea);
+          cutTextarea.select();
+
+          try {
+            var successful = document.execCommand('copy');
+          } catch(err) {
+            console.log('Oops, unable to cut');
+          }
+        });
+
+
         Auth.$onAuth(function(x){
           $scope.authData = x;
         });
@@ -71,11 +86,6 @@
             } else {
               $scope.room.embedYT = '';
             }
-          };
-
-          $scope.spotify = function(link) {
-
-            $scope.room.embedSpot = 'https://embed.spotify.com/?uri=' + link;
           };
 
           $scope.soundcloud = function(link) {
@@ -174,6 +184,13 @@
           console.log('add frame');
 
           $scope.YT = '';
+        };
+
+        $scope.addSpotify = function(link) {
+
+          firepad.insertEntity('iframe', { src: 'https://embed.spotify.com/?uri=' + link, width: 318, height: 400 })
+
+          $scope.spot = '';
         };
 
       }])
