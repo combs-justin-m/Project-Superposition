@@ -2,8 +2,11 @@
 @import 'home.scss';
 @import 'room.scss';
 
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 a {
-  text-decoration: none;
   padding: 0;
   color: #1F1F1F;
 }

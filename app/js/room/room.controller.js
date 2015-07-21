@@ -113,13 +113,14 @@
         };
 
 
-        firepad.registerEntity('a', { attrs: { HREF: 'h', INNER_HTML: 'i' },
+        firepad.registerEntity('a', { attrs: { HREF: 'h', INNER_HTML: 'i'},
           render: function (info) {
             var attrs = this.attrs;
             var href = info && info[attrs.HREF] || '';
             var innerHTML = info && info[attrs.INNER_HTML] || '';
             var link = document.createElement('a');
                 link.setAttribute('href', href);
+                link.setAttribute('target', '_blank');
                 link.innerHTML = innerHTML;
                 return link;
                 },
@@ -155,11 +156,18 @@
           }
         });
 
-        $scope.addFrame = function(url) {
-          firepad.insertEntity('iframe', { src: url, width: 400, height: 400 })
+        $scope.addLink = function(url) {
+          firepad.insertEntity('a', { h: url, i: url})
 
           $scope.link = '';
           $scope.showLink = false;
+        };
+
+        $scope.addImg = function(url) {
+          firepad.insertEntity('img', { src: url, frameborder:0 })
+
+          $scope.img = '';
+          $scope.showImg = false;
         };
 
         $scope.addYoutube = function(link) {
@@ -173,7 +181,7 @@
             $scope.linkYT = '';
           }
 
-          firepad.insertEntity('iframe', { src: $scope.linkYT, width: 400, height: 400 })
+          firepad.insertEntity('iframe', { src: $scope.linkYT})
 
           $scope.YT = '';
           $scope.showYT = false;

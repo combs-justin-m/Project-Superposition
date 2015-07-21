@@ -2,13 +2,13 @@
 <div class="user" ng-hide="authData">
   <!-- <img ng-src="https://www.clever-cloud.com/assets/img/github-icon.svg"> -->
   <md-button ng-click="login()">Log in</md-button>
-  <a href="#"><md-button class="roomBtn">Home</md-button></a>
+  <a href="#"><md-button>Home</md-button></a>
 </div>
 
 <div class="user" ng-show="authData">
   <!-- <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
   <p class="userName">{{authData.github.displayName}}</p> -->
-  <a href="#"><md-button class="roomBtn">Home</md-button></a>
+  <a href="#"><button class="roomBtn">Home</button></a>
 </div>
 
 
@@ -21,41 +21,51 @@
 <div id="userlist"></div>
 <div id="firepad"></div>
   <div class="wraps">
+    <div class="room">
 
-    <h2 class="roomTitle">pug room: </h2><input type="text" class="js-cuttextarea" value="{{href}}"></input>
+      <input type="text" class="js-cuttextarea" value="{{href}}"></input>
 
-    <button class="js-textareacutbtn" ng-click="showCopy()">
-      <i class="fa fa-clipboard"></i>
-      <md-tooltip>Copy to clipboard</md-tooltip>
-    </button>
-
-    <a href="http://twitter.com/home?status=Join%20my%20room%20with%20this%20link%20@pug%20https%3A%2F%2Fradiant-heat-3085.firebaseio.com%2F%23%2Froom%2F{{roomNum}}" target="_blank">
-      <button>
-        <i class="fa fa-twitter"></i>
+      <button class="js-textareacutbtn roomBtn" ng-click="showCopy()">
+        <i class="fa fa-clipboard"></i>
+        <md-tooltip>Copy to clipboard</md-tooltip>
       </button>
-    </a>
+
+      <a href="http://twitter.com/home?status=Join%20my%20room%20with%20this%20link%20@pug%20https%3A%2F%2Fradiant-heat-3085.firebaseapp.com%2F%23%2Froom%2F{{roomNum}}" target="_blank">
+        <button class="roomBtn">
+          <i class="fa fa-twitter"></i>
+          <md-tooltip>Tweet</md-tooltip>
+        </button>
+      </a>
+
+    </div>
 
     <div class="firepad-btn-group user-group">
-      <a class="firepad-btn" ng-click="showLink = !showLink">
+      <a class="firepad-btn userBtn" ng-click="showLink = !showLink">
         <i class="fa fa-link"></i>
       <md-tooltip>Link</md-tooltip>
       </a>
+      <a class="firepad-btn userBtn" ng-click="showImg = !showImg">
+        <i class="fa fa-picture-o"></i>
+      <md-tooltip>Image</md-tooltip>
+      </a>
 
-      <a class="firepad-btn" ng-click="showYT = !showYT">
+      <a class="firepad-btn userBtn" ng-click="showYT = !showYT">
         <i class="fa fa-youtube-play"></i>
       <md-tooltip>YouTube</md-tooltip>
       </a>
 
-      <a class="firepad-btn" ng-click="showSpot = !showSpot">
+      <a class="firepad-btn userBtn" ng-click="showSpot = !showSpot">
         <i class="fa fa-spotify"></i>
         <md-tooltip>Spotify</md-tooltip>
       </a>
 
-
-      <form class="userForm" ng-submit="addFrame(link)">
-        <input type="text"  placeholder="URL Link to site" ng-show="showLink" ng-model="link">
+      <form class="userForm" ng-submit="addLink(link)">
+        <input type="text"  placeholder="URL of Site" ng-show="showLink" ng-model="link">
       </form>
 
+      <form class="userForm" ng-submit="addImg(img)">
+        <input type="text"  placeholder="URL of Image" ng-show="showImg" ng-model="img">
+      </form>
 
       <form class="userForm" ng-submit="addYoutube(YT)">
         <input type="text"  placeholder="URL of YT video" ng-show="showYT" ng-model="YT">

@@ -1,19 +1,48 @@
 $youtube: #CC181E;
 $spotify: #2EBD59;
 $soundcloud: #FF5500;
-$darksidebar: #283246;
-$darkpurple: #390F72;
+$darksidebar: #1C013D;
 $darkgray: #c9c9c9;
-
+$lightpurple: #9671E2;
+$purple: #774DC7;
+$darkpurple: #2D0065;
+$focus: #48C4D2;
 
 #userlist {
   position: fixed; left: 0; top: 0; height: 100vh;
-  width: 175px; border-right: 1px solid lightgrey;
+  width: 175px;
   background-color: $darksidebar;
 }
 #firepad {
   position: absolute; left: 175px; top: 0; bottom: 0; right: 0; height: auto;
   border-left: 1px solid lightgrey;
+}
+
+.firepad-toolbar {
+  // background-color: $darkpurple;
+}
+
+.firepad-userlist-name {
+  top: 8px !important;
+  color: #fff !important;
+}
+
+.firepad-userlist-users {
+  top: 43px !important;
+}
+
+.firepad-userlist-user {
+  border-bottom: 1px solid #fff !important;
+}
+
+.firepad-userlist-color-indicator {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.firepad-userlist-heading {
+  border-bottom: 1px solid #fff !important;
+  padding-bottom: 5px;
 }
 
 .firepad-userlist-heading {
@@ -25,94 +54,49 @@ $darkgray: #c9c9c9;
 }
 
 .firepad-userlist-name-input {
-  color: $darkgray;
+  color: #fff;
   background-color: $darksidebar;
+  top: 3px !important;
+}
+
+input.firepad-userlist-name-input {
+    border-bottom: 1px solid #fff !important;
 }
 
 .powered-by-firepad {
   visibility: hidden;
 }
 
-.roomTitle {
-  margin-left: 15px;
-  display: inline-block;
-}
-
-.roomMenu {
-  float: left;
-}
-
-.container {
-  text-align: center;
-  margin: 0 auto;
-  clear: both;
-}
-
-.frame {
-  text-align: center;
-  width: 500px;
-  height: 435px;
-  margin: 30px auto;
-  float: right;
-
-  input {
-    display: block;
-    margin: 0 auto;
-  }
-}
-
-// #SoundCloud {
-//   width: 500px;
-//   height: 400px;
-//   margin: 30px auto;
-// }
-
-.youtubeBtn {
-  background-color: $youtube !important;
-}
-
-.youtubeFrame {
-  background-color: $youtube;
-}
-
-.spotifyBtn {
-  background-color: $spotify !important;
-}
-
-.spotifyFrame {
-  background-color: $spotify;
-  width: 317px;
-}
-
-.soundcloudBtn {
-  background-color: $soundcloud !important;
-}
-
-.soundcloudFrame {
-  background-color: $soundcloud;
-}
-
-.soundInput {
-  position: relative;
-  top: -60px;
-}
-
-.soundIcon {
-  font-size: 200px;
-  margin-top: 20%;
-}
-
-.linkIcon {
-  margin-top: 14px;
+.room {
+  margin: 15px 15px 0;
 }
 
 .user-group {
   display: block !important;
-  margin: 0 10px !important;
+  margin: 20px 10px !important;
+}
+
+.userBtn {
+  width: 30px;
+  font-size: 24px !important;
+  padding: 7px !important;
+  margin-right: 3px;
 }
 
 .userForm {
   display: inline-block;
+}
+
+.roomBtn {
+  color: #c9c9c9;
+  background-color: transparent;
+  border: 1px solid #c9c9c9;
+
+  &:hover {
+    color: #fff;
+    background-color: $lightpurple;
+    border: 1px solid $darksidebar;
+  }
 }
 
 .js-cuttextarea {
