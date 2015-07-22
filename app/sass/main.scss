@@ -4,9 +4,11 @@
 
 * {
   font-family: 'Roboto', sans-serif;
+  transition: 0.2s all ease-in-out;
 }
 
 a {
+  cursor: pointer;
   padding: 0;
   color: #1F1F1F;
 }
@@ -18,4 +20,16 @@ a:visited {
 
 a:focus {
     outline: none;
+}
+
+.homeBtn {
+  text-decoration: none;
+  padding: 8px;
+  margin-left: 15px;
+  border: 1px solid #2D0065;
+
+  &:hover {
+    color: $purple;
+    background-color: $darkpurple;
+  }
 }

@@ -181,7 +181,7 @@
             $scope.linkYT = '';
           }
 
-          firepad.insertEntity('iframe', { src: $scope.linkYT})
+          firepad.insertEntity('iframe', { src: $scope.linkYT, height: 400, width: 1000})
 
           $scope.YT = '';
           $scope.showYT = false;

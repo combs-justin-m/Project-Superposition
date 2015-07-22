@@ -19,7 +19,7 @@
 }
 
 .firepad-with-toolbar .CodeMirror {
-  top: 178px;
+  top: 176px;
 }
 
 .firepad-with-toolbar .CodeMirror-lines {
@@ -27,8 +27,8 @@
 }
 
 .firepad-toolbar {
-  height: 82px;
-  line-height: 92px;
+  height: 80px;
+  line-height: 100px;
   padding-top: 95px;
   padding-left: 10px;
   border-bottom: 1px solid #c9c9c9;
@@ -131,7 +131,7 @@ a.firepad-btn, a.firepad-btn:visited, a.firepad-btn:active {
 
 a.firepad-btn:hover {
   color: #fff;
-  background-color: #9671E2;
+  background-color: #2D0065;
   border-color: #1C013D;
   text-decoration: none;
 }
@@ -214,7 +214,7 @@ a.firepad-btn:active {
 .firepad-dropdown-menu a:hover {
   color: #fff;
   text-decoration: none;
-  background-color: #ffbf86;
+  background-color: #2D0065;
 }
 
 .firepad-color-dropdown-item {

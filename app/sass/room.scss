@@ -1,7 +1,7 @@
 $youtube: #CC181E;
 $spotify: #2EBD59;
 $soundcloud: #FF5500;
-$darksidebar: #1C013D;
+$darksidebar: #1C2836;
 $darkgray: #c9c9c9;
 $lightpurple: #9671E2;
 $purple: #774DC7;
@@ -15,11 +15,25 @@ $focus: #48C4D2;
 }
 #firepad {
   position: absolute; left: 175px; top: 0; bottom: 0; right: 0; height: auto;
-  border-left: 1px solid lightgrey;
 }
 
-.firepad-toolbar {
-  // background-color: $darkpurple;
+.roomLogo {
+  font-weight: 700;
+  color: white;
+  font-size: 32px;
+  height: 62px;
+  background-color: $purple;
+
+  img {
+    margin-top: 15px;
+    margin-left: 30px;
+  }
+}
+
+.pug {
+  position: relative;
+  font-family: Ubuntu;
+  top: -5px;
 }
 
 .firepad-userlist-name {
@@ -28,11 +42,16 @@ $focus: #48C4D2;
 }
 
 .firepad-userlist-users {
-  top: 43px !important;
+  top: 73px !important;
+}
+
+.firepad-userlist-heading {
+  margin: 50px 15px 0 !important;
 }
 
 .firepad-userlist-user {
   border-bottom: 1px solid #fff !important;
+  margin: 63px 0 !important;
 }
 
 .firepad-userlist-color-indicator {
@@ -68,12 +87,26 @@ input.firepad-userlist-name-input {
 }
 
 .room {
-  margin: 15px 15px 0;
+  padding: 18px 18px 18px 0;
+  width: 100%;
+  background-color: #774DC7;
+}
+
+.roomBtn {
+  color: $lightpurple;
+  background-color: $darkpurple;
+  border: 1px solid $darksidebar;
+
+  &:hover {
+    color: $lightpurple;
+    background-color: #fff;
+    border: 1px solid #c9c9c9;
+  }
 }
 
 .user-group {
   display: block !important;
-  margin: 20px 10px !important;
+  margin: 10px 10px !important;
 }
 
 .userBtn {
@@ -87,24 +120,13 @@ input.firepad-userlist-name-input {
   display: inline-block;
 }
 
-.roomBtn {
-  color: #c9c9c9;
-  background-color: transparent;
-  border: 1px solid #c9c9c9;
-
-  &:hover {
-    color: #fff;
-    background-color: $lightpurple;
-    border: 1px solid $darksidebar;
-  }
-}
-
 .js-cuttextarea {
   display: inline-block;
   width: 300px;
 }
 
-.wraps {
+.wrapper {
   position: fixed;
-  left: 177px;
+  width: 100%;
+  left: 175px;
 }

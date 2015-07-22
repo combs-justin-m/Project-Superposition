@@ -1,26 +1,21 @@
 
 <div class="user" ng-hide="authData">
-  <!-- <img ng-src="https://www.clever-cloud.com/assets/img/github-icon.svg"> -->
-  <md-button ng-click="login()">Log in</md-button>
-  <a href="#"><md-button>Home</md-button></a>
+  <a ng-click="login()">Log in</a>
+  <a href="#" class="homeBtn">Home</a>
 </div>
 
 <div class="user" ng-show="authData">
-  <!-- <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
-  <p class="userName">{{authData.github.displayName}}</p> -->
-  <a href="#"><button class="roomBtn">Home</button></a>
+  <a href="#" class="homeBtn">Home</a>
 </div>
 
-
-<!-- <md-button ng-click="addFrame()">
-
-</md-button> -->
-
-
-
-<div id="userlist"></div>
+<div id="userlist">
+  <div class="roomLogo">
+    <img src="../../images/tailtrans2.png" style="width: 28px" alt="" />
+    <span class="pug">pug</span>
+  </div>
+</div>
 <div id="firepad"></div>
-  <div class="wraps">
+  <div class="wrapper">
     <div class="room">
 
       <input type="text" class="js-cuttextarea" value="{{href}}"></input>
