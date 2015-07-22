@@ -87,7 +87,7 @@
         //// Initialize contents.
         firepad.on('ready', function() {
           if (firepad.isHistoryEmpty()) {
-            firepad.setText('Copy room URL. Share with friends directly, or Tweet for everyone to join in.');
+            firepad.setText('Copy room URL then share with friends directly, or Tweet for everyone to join in.');
           }
         });
 
