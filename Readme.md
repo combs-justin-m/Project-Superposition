@@ -1,9 +1,17 @@
-## Welcome to My Angular Project
+## Pick up group
 
-> I am your Readme.md file, you should probably update me.
+> Share links, pictures, videos, and songs. Together, in real time.
 
+### Technologies
 
-## Usage
+- AngularJS
+- Firebase
+
+### Usage
+
+- `git clone` repo URL
+- `npm install`
+- `bower install`
 
 This template contains some simple `gulp` tasks. They are as follows:
 
