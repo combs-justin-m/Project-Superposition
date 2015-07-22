@@ -1,10 +1,8 @@
-@import 'login.scss';
 @import 'home.scss';
 @import 'room.scss';
 
 * {
   font-family: 'Roboto', sans-serif;
-  transition: 0.2s all ease-in-out;
 }
 
 a {
@@ -14,7 +12,7 @@ a {
 }
 
 a:visited {
-    color: #1F1F1F;
+    color: #fff;
     outline: none;
 }
 
@@ -22,14 +20,25 @@ a:focus {
     outline: none;
 }
 
+.login {
+  color: #fff;
+
+  &:hover {
+    color: $darkpurple;
+  }
+}
+
 .homeBtn {
+  color: #fff !important;
   text-decoration: none;
   padding: 8px;
   margin-left: 15px;
-  border: 1px solid #2D0065;
+  border: 1px solid #fff;
+  transition: 0.2s all ease-in-out;
 
   &:hover {
-    color: $purple;
+    color: $purple !important;
     background-color: $darkpurple;
+    border: 1px solid #2D0065;
   }
 }

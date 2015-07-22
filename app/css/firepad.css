@@ -134,6 +134,7 @@ a.firepad-btn:hover {
   background-color: #2D0065;
   border-color: #1C013D;
   text-decoration: none;
+  transition: 0.2s all ease-in-out;
 }
 
 a.firepad-btn:active {
@@ -215,6 +216,7 @@ a.firepad-btn:active {
   color: #fff;
   text-decoration: none;
   background-color: #2D0065;
+  transition: 0.2s all ease-in-out;
 }
 
 .firepad-color-dropdown-item {

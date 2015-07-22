@@ -87,7 +87,7 @@
         //// Initialize contents.
         firepad.on('ready', function() {
           if (firepad.isHistoryEmpty()) {
-            firepad.setText('Copy room URL, share with friends directly, or Tweet for everyone to join in.');
+            firepad.setText('Copy room URL. Share with friends directly, or Tweet for everyone to join in.');
           }
         });
 
@@ -181,7 +181,7 @@
             $scope.linkYT = '';
           }
 
-          firepad.insertEntity('iframe', { src: $scope.linkYT, height: 400, width: 1000})
+          firepad.insertEntity('iframe', { src: $scope.linkYT, height: 300, width: 550})
 
           $scope.YT = '';
           $scope.showYT = false;

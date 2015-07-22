@@ -1,40 +1,37 @@
 
 <div class="user" ng-hide="authData">
-  <!-- <img ng-src="https://www.clever-cloud.com/assets/img/github-icon.svg"> -->
-  <md-button ng-click="login()">Log in</md-button>
-  <a href="#"><md-button class="roomBtn">Home</md-button></a>
+  <a class="login" ng-click="login()">Log in</a>
+  <a href="#" class="homeBtn">Home</a>
 </div>
 
 <div class="user" ng-show="authData">
-  <!-- <img ng-src="{{ authData.github.cachedUserProfile.avatar_url }}" class="profilePic">
-  <p class="userName">{{authData.github.displayName}}</p> -->
-  <a href="#"><md-button class="roomBtn">Home</md-button></a>
+  <a href="#" class="homeBtn">Home</a>
 </div>
 
-
-<!-- <md-button ng-click="addFrame()">
-
-</md-button> -->
-
-
-
-<div id="userlist"></div>
+<div id="userlist">
+  <div class="roomLogo">
+    <img src="../../images/tailtrans2.png" style="width: 28px" alt="" />
+    <span class="pug">pug</span>
+  </div>
+</div>
 <div id="firepad"></div>
+  <div class="wrapper">
+    <div class="room">
 
-<div class="wraps">
+      <input type="text" class="js-cuttextarea" value="{{href}}"></input>
 
-<h2 class="roomTitle">pug room: </h2><input type="text" class="js-cuttextarea" value="{{href}}"></input>
+      <button class="js-textareacutbtn roomBtn" ng-click="showCopy()">
+        <i class="fa fa-clipboard"></i>
+        <md-tooltip>Copy to clipboard</md-tooltip>
+      </button>
 
-<button class="js-textareacutbtn" ng-click="showCopy()">
-  <i class="fa fa-clipboard"></i>
-  <md-tooltip>
-      Copy to clipboard
-  </md-tooltip>
-  </button>
+      <a href="http://twitter.com/home?status=Join%20my%20room%20with%20this%20link%20@pug%20https%3A%2F%2Fradiant-heat-3085.firebaseapp.com%2F%23%2Froom%2F{{roomNum}}" target="_blank">
+        <button class="roomBtn">
+          <i class="fa fa-twitter"></i>
+          <md-tooltip>Tweet</md-tooltip>
+        </button>
+      </a>
 
-  <a href="http://twitter.com/home?status=Join%20my%20room%20with%20this%20link%20@pug%20https%3A%2F%2Fradiant-heat-3085.firebaseapp.com%2F%23%2Froom%2Fjs%2F{{roomNum}}" target="_blank">
-    <button>
-      <i class="fa fa-twitter"></i>
-    </button>
-  </a>
+    </div>
+
 </div>

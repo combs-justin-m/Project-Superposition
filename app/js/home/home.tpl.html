@@ -1,44 +1,41 @@
 
-<!-- LOGIN BUTTON -->
-<div class="homeContainer">
   <nav>
-    <div class="logo">
-      <h2>Pug</h2>
+    <div class="roomLogo">
+      <img src="../../images/tailtrans2.png" style="width: 28px" alt="" />
+        <a class="pug" href="/#/room/pug">pug</a>
     </div>
 
+    <div class="userHome">
 
-
-
-    <div class="user">
-
-      <md-button ng-hide="authData" ng-click="login()">Log in</md-button>
-      <md-button ng-show="authData" class="logoutBtn" ng-click="logout()">Logout</md-button>
+      <a class="login" ng-hide="authData" ng-click="login()">Log in</a>
+      <a ng-show="authData" class="logoutBtn" ng-click="logout()">Logout</a>
 
 
       <md-menu md-position-mode="target-right target">
-         <md-button ng-click="$mdOpenMenu()">
-           New Room <i class="fa fa-caret-down"></i>
-         </md-button>
+         <a class="homeBtn" ng-click="$mdOpenMenu()">
+           New Room
+         </a>
 
-         <md-menu-content width="2">
+         <md-menu-content width="3">
            <md-menu-item>
-             <a href="/#/room/{{roomNum}}"><md-button class="menuBtn">Text</md-button></a>
+             <a href="/#/room/{{roomNum}}"><md-button md-no-ink="" class="menuBtn">Text</md-button></a>
            </md-menu-item>
            <md-menu-item>
-             <a href="/#/room/js/{{roomNum}}"><md-button class="menuBtn">JavaScript</md-button></a>
+             <a href="/#/room/js/{{roomNum}}"><md-button md-no-ink="" class="menuBtn">JavaScript</md-button></a>
            </md-menu-item>
          </md-menu-content>
        </md-menu>
 
     </div>
+
+
+    <section>
+      <h2>Pick up group.</h2>
+      <h4>
+        Share links, pictures, videos, and songs. <br>
+        Together, in real time.
+      </h4>
+
+      <img class="md-whiteframe-z5" src="../../images/splash.png" style="width: 900px" alt="" />
+    </section>
   </nav>
-
-  <section>
-    <h2>Pick up group.</h2>
-    <h4>
-      Share links, pictures, videos, and songs. <br>
-      Together, in real time.
-    </h4>
-  </section>
-
-</div>

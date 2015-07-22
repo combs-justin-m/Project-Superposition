@@ -24,11 +24,12 @@
             url: '/room/js/:roomId',
             templateUrl: 'js/room/roomJS.tpl.html',
             controller: 'roomJSController'
-          });
+          })
+
 
         // Completely disable SCE.  For demonstration purposes only!
         // Do not use in production.
-        $sceProvider.enabled(false);
+        // $sceProvider.enabled(false);
 
     }])
 

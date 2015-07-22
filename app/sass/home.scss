@@ -1,14 +1,27 @@
-.homeContainer {
-  position: relative;
-  width: 80%;
-  margin: 0 auto;
+$darksidebar: #1C2836;
+$darkgray: #c9c9c9;
+$lightpurple: #9671E2;
+$purple: #774DC7;
+$darkpurple: #2D0065;
+
+nav {
+  height: 100vh;
+  background-color: $purple;
 }
 
-.user {
+.pug {
+  position: relative;
+  font-family: Ubuntu;
+  text-decoration: none;
+  top: -5px;
+}
+
+.userHome {
   font-size: 18px;
   line-height: 62px;
   position: absolute;
   right: 30px;
+  top: 10px;
   text-align: center;
   z-index: 10;
 }
@@ -31,8 +44,27 @@
 }
 
 section {
+  // height: 100vh;
+  background-color: $purple;
+  color: #fff;
   clear: both;
   text-align: center;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 30px;
+    font-size: 52px;
+  }
+
+  h4 {
+    font-size: 22px;
+    font-weight: 300;
+  }
+
+  img {
+    margin-bottom: 30px;
+  }
 }
 
 

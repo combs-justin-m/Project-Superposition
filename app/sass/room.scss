@@ -1,12 +1,8 @@
-$youtube: #CC181E;
-$spotify: #2EBD59;
-$soundcloud: #FF5500;
 $darksidebar: #1C2836;
 $darkgray: #c9c9c9;
 $lightpurple: #9671E2;
 $purple: #774DC7;
 $darkpurple: #2D0065;
-$focus: #48C4D2;
 
 #userlist {
   position: fixed; left: 0; top: 0; height: 100vh;
@@ -15,6 +11,15 @@ $focus: #48C4D2;
 }
 #firepad {
   position: absolute; left: 175px; top: 0; bottom: 0; right: 0; height: auto;
+}
+
+.user {
+  font-size: 18px;
+  line-height: 62px;
+  position: absolute;
+  right: 30px;
+  text-align: center;
+  z-index: 10;
 }
 
 .roomLogo {
@@ -30,19 +35,13 @@ $focus: #48C4D2;
   }
 }
 
-.pug {
-  position: relative;
-  font-family: Ubuntu;
-  top: -5px;
-}
-
 .firepad-userlist-name {
   top: 8px !important;
   color: #fff !important;
 }
 
 .firepad-userlist-users {
-  top: 73px !important;
+  top: 135px !important;
 }
 
 .firepad-userlist-heading {
@@ -51,7 +50,7 @@ $focus: #48C4D2;
 
 .firepad-userlist-user {
   border-bottom: 1px solid #fff !important;
-  margin: 63px 0 !important;
+  margin: 3px 0 !important;
 }
 
 .firepad-userlist-color-indicator {
@@ -93,14 +92,15 @@ input.firepad-userlist-name-input {
 }
 
 .roomBtn {
-  color: $lightpurple;
-  background-color: $darkpurple;
-  border: 1px solid $darksidebar;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  transition: 0.2s all ease-in-out;
 
   &:hover {
     color: $lightpurple;
-    background-color: #fff;
-    border: 1px solid #c9c9c9;
+    background-color: $darkpurple;
+    border: 1px solid $darksidebar;
   }
 }
 
